@@ -22,7 +22,7 @@ const RootPage = () => {
 				<div className="space-y-10 pb-10">
 					<Image
 						src="/hero.png"
-						alt="Zasheva house"
+						alt="Zasheva house - Bansko"
 						width={1920}
 						height={1080}
 						className="rounded-b-xl shadow-lg"
