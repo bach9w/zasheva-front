@@ -1,6 +1,5 @@
 'use client';
-import getBillboard from '@/actions/get-billboard';
-import getProducts from '@/actions/get-products';
+
 import { motion } from 'framer-motion';
 import React, { createContext } from 'react';
 
