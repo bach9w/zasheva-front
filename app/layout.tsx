@@ -4,6 +4,7 @@ import './globals.css';
 import Footer from '@/components/footer';
 import Navbar from '@/components/navbar';
 import ModalProvider from '@/providers/modal-provider';
+import { Analytics } from '@vercel/analytics/react';
 
 const font = Urbanist({ subsets: ['latin'] });
 
@@ -27,6 +28,7 @@ export default function RootLayout({
 					height: '100%',
 				}}
 			>
+				<Analytics />
 				<Navbar />
 				<ModalProvider />
 
