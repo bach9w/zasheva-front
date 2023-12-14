@@ -40,7 +40,7 @@ const RootPage = () => {
 						transition={{ duration: 1, delay: 0.5 }}
 					>
 						<Snowflake />
-						Снежна покривка в Банско - 40 см
+						Снежна покривка в Банско - 0 см
 					</motion.div>
 					<motion.div
 						className="snow bg-white h-20 flex w-full text-center object-center justify-center items-center md:rounded-l-xl hover:bg-orange-500 hover:text-white"
