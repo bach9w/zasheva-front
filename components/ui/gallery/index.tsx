@@ -19,7 +19,7 @@ const Gallery: React.FC<GalleryProps> = ({ images }) => {
 	const handlers = useSwipeable({
 		onSwipedLeft: () => handleNext(),
 		onSwipedRight: () => handlePrevious(),
-		preventDefaultTouchmoveEvent: true,
+	
 		trackMouse: true,
 	});
 
