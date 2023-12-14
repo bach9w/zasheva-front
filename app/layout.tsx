@@ -8,7 +8,7 @@ import ModalProvider from '@/providers/modal-provider';
 const font = Urbanist({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-	title: 'Zasheva',
+	title: 'Zasheva - Bansko',
 	description: 'Zasheva house - Bansko',
 };
 
