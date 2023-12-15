@@ -48,10 +48,10 @@ export const Example: React.FC<GalleryProps> = ({ images }) => {
 
 	return (
 		<>
-			<div className="w-auto h-auto relative flex justify-center mx-auto">
+			<div className="w-auto h-auto relative justify-end flex mx-auto">
 				<AnimatePresence initial={false} custom={direction}>
 					<motion.img
-						className=" aspect-square "
+						className="aspect-square"
 						key={page}
 						src={images[imageIndex].url}
 						alt={images[imageIndex].id}
@@ -62,7 +62,7 @@ export const Example: React.FC<GalleryProps> = ({ images }) => {
 						exit="exit"
 						transition={{
 							x: { type: 'spring', stiffness: 300, damping: 30 },
-							opacity: { duration: 0.1 },
+							opacity: { duration: 0.05 },
 						}}
 						drag="x"
 						dragConstraints={{ left: 0, right: 0 }}
