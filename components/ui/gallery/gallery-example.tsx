@@ -51,7 +51,7 @@ export const Example: React.FC<GalleryProps> = ({ images }) => {
 			<div className="w-auto h-[100vw] relative flex justify-center align-center">
 				<AnimatePresence initial={false} custom={direction}>
 					<motion.img
-						className=" aspect-square m-auto overflow-hidden"
+						className=" aspect-square m-auto "
 						key={page}
 						src={images[imageIndex].url}
 						alt={images[imageIndex].id}
