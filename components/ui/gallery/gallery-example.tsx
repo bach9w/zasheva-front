@@ -48,10 +48,10 @@ export const Example: React.FC<GalleryProps> = ({ images }) => {
 
 	return (
 		<>
-			<div className="w-auto h-[100vw] relative flex justify-center align-center">
+			<div className="w-auto h-auto relative flex justify-center mx-auto">
 				<AnimatePresence initial={false} custom={direction}>
 					<motion.img
-						className=" aspect-square m-auto "
+						className=" aspect-square "
 						key={page}
 						src={images[imageIndex].url}
 						alt={images[imageIndex].id}
