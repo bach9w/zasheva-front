@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 
 import { Image as ImageType } from '@/types';
 
-import GalerryTab from './gallery-tab';
 import { useSwipeable } from 'react-swipeable';
 import Image from 'next/image';
 import Button from '../button';
@@ -19,7 +18,7 @@ const Gallery: React.FC<GalleryProps> = ({ images }) => {
 	const handlers = useSwipeable({
 		onSwipedLeft: () => handleNext(),
 		onSwipedRight: () => handlePrevious(),
-	
+
 		trackMouse: true,
 	});
 

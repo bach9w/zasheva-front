@@ -2,8 +2,7 @@
 
 import Container from '@/components/ui/container';
 import { motion } from 'framer-motion';
-
-import Image from 'next/image';
+import MyGoogleMap from '@/components/googleMaps/map';
 
 const ContactPage = () => {
 	return (
@@ -18,19 +17,9 @@ const ContactPage = () => {
 						<h1>Контакти</h1>
 					</div>
 					<div className="object-center w-full justify-center flex">
-						<Image
-							src="/map.jpg"
-							width={500}
-							height={500}
-							alt="nextjs"
-							objectPosition="top"
-							sizes="(max-width: 768px) 100vw, 33vw"
-						/>
+						<MyGoogleMap />
 					</div>
 					<div className="bg-black text-white mt-2 text-sm md:text-xl grid-col-1 text-center object-center justify-center">
-						<div className="flex justify-center mb-2">
-							Latitude - 41.83976142120718, Longitude - 23.48916701530612
-						</div>
 						<div className="flex justify-center mb-2">
 							Адрес - гр. Банско - Тома Вишанов 3
 						</div>
