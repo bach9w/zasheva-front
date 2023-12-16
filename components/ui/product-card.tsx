@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { MouseEventHandler } from 'react';
-import { Expand, ShoppingCart } from 'lucide-react';
+import { BookUpIcon, CalendarPlus, Expand, ShoppingCart } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 
 import Currency from '@/components/ui/currency';
@@ -49,10 +49,12 @@ const ProductCard: React.FC<ProductCard> = ({ data }) => {
 							onClick={onPreview}
 							icon={<Expand size={20} className="text-gray-600" />}
 						/>
-						<IconButton
-							onClick={() => {}}
-							icon={<ShoppingCart size={20} className="text-gray-600" />}
-						/>
+						<a href="tel:+359897962266">
+							<IconButton
+								onClick={() => {}}
+								icon={<CalendarPlus size={20} className="text-gray-600" />}
+							/>
+						</a>
 					</div>
 				</div>
 			</div>

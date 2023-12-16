@@ -12,10 +12,10 @@ const Billboard: React.FC<BillboardProps> = ({ data }) => {
 		<div className="p-0 sm:p-0 lg:p-0 rounded-xl  overflow-hidden shadow-sm">
 			<div className="text-xl font-bold text-orange-500 text-center uppercase rounded-lg hover:shadow-blue-500">
 				<div
-					className="rounded-xl relative hover:shadow-lg  aspect-[2.4/1] overflow-hidden bg-center bg-cover"
+					className="rounded-xl relative hover:shadow-lg  aspect-[3.2/1] overflow-hidden bg-center bg-cover"
 					style={{ backgroundImage: `url(${data?.imageUrl})` }}
 				></div>
-				<div className="p-1 bg-orange-500 text-white h-[60px]">
+				<div className="p-1 bg-opacity-80 bg-orange-500 text-white h-[60px]">
 					{data?.label}
 				</div>
 			</div>

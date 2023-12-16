@@ -2,7 +2,7 @@ import getProduct from '@/actions/get-product';
 import getProducts from '@/actions/get-products';
 import ProductList from '@/components/product-list';
 import Container from '@/components/ui/container';
-import Gallery from '@/components/ui/gallery';
+import { SwipeCarousel } from '@/components/ui/gallery/swipeCarousel';
 import Info from '@/components/info';
 import Button from '@/components/ui/button';
 import {
@@ -12,7 +12,6 @@ import {
 	PlusCircleIcon,
 } from 'lucide-react';
 import Link from 'next/link';
-import { Example } from '@/components/ui/gallery/gallery-example';
 
 interface ProductPageProps {
 	params: {
@@ -33,18 +32,20 @@ const ProductPage: React.FC<ProductPageProps> = async ({ params }) => {
 						<Link href="https://www.booking.com/hotel/bg/zashieva-kshcha.html?aid=330843;lang=en;pb=1">
 							<Button className="flex items-center gap-x-2">
 								<PlusCircleIcon />
-								Book a room
+								Запази стая
 							</Button>
 						</Link>
-						<Button className="flex items-center gap-x-2">
-							<PhoneCall />
-							Check availability
-						</Button>
+						<a href="tel:+359897962266">
+							<Button className="flex items-center gap-x-2">
+								<PhoneCall />
+								Провери наличност
+							</Button>
+						</a>
 					</div>
 				</div>
 				<div className="px-2 py-10 sm:px-6 lg:px-8">
 					<div className="lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-8">
-						<Example images={product.images} />
+						<SwipeCarousel images={product.images} />
 						<div className="mt-10 px-4 sm:mt-16 sm:px-0 lg:mt-0">
 							<Info data={product} />
 						</div>
