@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { MouseEventHandler } from 'react';
 import { BookUpIcon, CalendarPlus, Expand, ShoppingCart } from 'lucide-react';
 import { useRouter } from 'next/navigation';
+import { motion } from 'framer-motion';
 
 import Currency from '@/components/ui/currency';
 import IconButton from '@/components/ui/icon-button';
@@ -31,7 +32,16 @@ const ProductCard: React.FC<ProductCard> = ({ data }) => {
 	};
 
 	return (
-		<div
+		<motion.div
+			initial={{ opacity: 0, x: -150 }}
+			whileInView={{
+				opacity: 1,
+				x: 0,
+				transition: {
+					duration: 1,
+				},
+			}}
+			viewport={{ once: true }}
 			onClick={handleClick}
 			className="bg-white group cursor-pointer rounded-xl border p-3 space-y-4"
 		>
@@ -67,7 +77,7 @@ const ProductCard: React.FC<ProductCard> = ({ data }) => {
 			<div className="flex items-center justify-between">
 				<Currency value={data?.price} />
 			</div>
-		</div>
+		</motion.div>
 	);
 };
 

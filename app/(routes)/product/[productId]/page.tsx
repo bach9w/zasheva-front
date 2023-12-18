@@ -30,13 +30,13 @@ const ProductPage: React.FC<ProductPageProps> = async ({ params }) => {
 				<div className="sm:hidden bg-black h-[50px] flex items-center justify-center ">
 					<div className=" items-center flex gap-x-4">
 						<Link href="https://www.booking.com/hotel/bg/zashieva-kshcha.html?aid=330843;lang=en;pb=1">
-							<Button className="flex items-center gap-x-2">
+							<Button className="flex items-center gap-x-2 h-10 md:h-auto">
 								<PlusCircleIcon />
 								Запази стая
 							</Button>
 						</Link>
 						<a href="tel:+359897962266">
-							<Button className="flex items-center gap-x-2">
+							<Button className="flex items-center gap-x-2 h-10 md:h-auto">
 								<PhoneCall />
 								Провери наличност
 							</Button>
@@ -51,7 +51,7 @@ const ProductPage: React.FC<ProductPageProps> = async ({ params }) => {
 						</div>
 					</div>
 					<hr className="my-10" />
-					<ProductList title="Related Items" items={suggestedProducts} />
+					<ProductList title="Предложения" items={suggestedProducts} />
 				</div>
 			</Container>
 		</div>

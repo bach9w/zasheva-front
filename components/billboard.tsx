@@ -1,4 +1,6 @@
+'use client';
 import { Billboard as BillboardType } from '@/types';
+import { motion } from 'framer-motion';
 
 interface BillboardProps {
 	data: BillboardType;
@@ -9,8 +11,13 @@ const Billboard: React.FC<BillboardProps> = ({ data }) => {
 		return <div>Loading...</div>;
 	}
 	return (
-		<div className="p-0 sm:p-0 lg:p-0 rounded-xl  overflow-hidden shadow-sm">
-			<div className="text-xl font-bold text-orange-500 text-center uppercase rounded-lg hover:shadow-blue-500">
+		<motion.div
+			initial={{ opacity: 1, y: -300 }}
+			animate={{ opacity: 1, y: 0 }}
+			transition={{ duration: 1.5 }}
+			className="p-0 sm:p-0 lg:p-0 rounded-xl  overflow-hidden shadow-sm"
+		>
+			<div className="text-2md md:text-xl font-bold text-orange-500 text-center uppercase rounded-lg hover:shadow-blue-500">
 				<div
 					className="rounded-xl relative hover:shadow-lg  aspect-[3.2/1] overflow-hidden bg-center bg-cover"
 					style={{ backgroundImage: `url(${data?.imageUrl})` }}
@@ -19,7 +26,7 @@ const Billboard: React.FC<BillboardProps> = ({ data }) => {
 					{data?.label}
 				</div>
 			</div>
-		</div>
+		</motion.div>
 	);
 };
 

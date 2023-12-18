@@ -7,6 +7,7 @@ import { usePathname } from 'next/navigation';
 import NavbarActions from './navbar-actions';
 
 import SideBar from './navbar-mobile2';
+import Button from './ui/button';
 
 interface MainNavProps {
 	data: Category[];
@@ -17,7 +18,6 @@ const MainNav: React.FC<MainNavProps> = ({ data }) => {
 	const staticRoutes = [
 		{ href: '/', label: 'Начало', active: pathname === '/' },
 		{ href: '/about', label: 'За нас', active: pathname === '/about' },
-		{ href: '/contacts', label: 'Контакти', active: pathname === '/contacts' },
 	];
 
 	const routes = data.map((route) => ({
@@ -25,25 +25,28 @@ const MainNav: React.FC<MainNavProps> = ({ data }) => {
 		label: route.name,
 		active: pathname === `/category/${route.id}`,
 	}));
+	const nextRoutes = [
+		{ href: '/contacts', label: 'Контакти', active: pathname === '/contacts' },
+	];
 
 	return (
 		<>
 			<nav className="hidden sm:flex space-x-4 lg:space-x-6">
-				{[...staticRoutes, ...routes].map((route) => (
-					<Link
-						key={route.href}
-						href={route.href}
-						className={cn(
-							'text-lg font-medium transition-colors hover:text-black hover:bg-orange-500 p-1 rounded-md ',
-							route.active ? ' text-white bg-black p-1' : 'text-neutral-500 ',
-						)}
-					>
-						{route.label}
+				{[...staticRoutes, ...routes, ...nextRoutes].map((route) => (
+					<Link key={route.href} href={route.href}>
+						<Button
+							className={cn(
+								'p-5 transition-colors duration-200 ease-in-out bg-white text-black hover:bg-black hover:text-white',
+								route.active ? ' text-white bg-black' : 'text-neutral-500 ',
+							)}
+						>
+							{route.label}
+						</Button>
 					</Link>
 				))}
 			</nav>
 
-			<SideBar routes={[...routes, ...staticRoutes]} />
+			<SideBar routes={[...staticRoutes, ...routes, ...nextRoutes]} />
 		</>
 	);
 };

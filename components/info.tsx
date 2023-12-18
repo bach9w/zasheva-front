@@ -38,13 +38,13 @@ const Info: React.FC<InfoProps> = ({ data }) => {
 			</div>
 			<div>
 				<h3 className="font-semibold mt-5 text-black">Удобства</h3>
-				<div className="mt-10 flex gap-x-3">
+				<div className="mt-10 flex gap-x-2 text-md md:text-xl">
 					<Wifi /> Безплатен интернет
 					<ShowerHead /> Отделна баня
 					<ParkingCircle /> Безплатен паркинг
 					<Tv /> TV
 				</div>
-				<div className="mt-10 flex gap-x-3">
+				<div className="mt-10 flex gap-x-2 text-md md:text-xl">
 					<Wind /> Сешоар
 					<SprayCan /> Хотелски принадлежности
 					<BedDouble /> Двойно легло
