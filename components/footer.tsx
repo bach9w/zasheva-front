@@ -1,8 +1,9 @@
 'use client';
-import { InfoIcon, PhoneCallIcon } from 'lucide-react';
+import { InfoIcon, MailIcon, PhoneCallIcon } from 'lucide-react';
 import React, { useState, useEffect } from 'react';
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
 import NavbarActions from './navbar-actions';
+import Link from 'next/link';
 
 const Footer = () => {
 	const { scrollY } = useScroll();
@@ -25,18 +26,23 @@ const Footer = () => {
 			}}
 			animate={hidden ? 'hidden' : 'visible'}
 			transition={{ duration: 0.5, ease: 'easeInOut' }}
-			className="fixed w-full  bottom-0 bg-gray-50"
+			className="sticky bottom-0 flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t bg-white"
 		>
-			<div className="text-sm md:text-xl mx-auto max-w-screen-xl px-4 py-2 sm:px-6 lg:px-8">
-				<div className="flex sm:items-start justify-start">
-					<div className=" flex justify-center mb-2">
-						<InfoIcon className="h-5 w-5 md:h-10 md:w-10" /> info@zasheva.com
-					</div>
-				</div>
-				<div className="absolute right-3 bottom-2 sm:bottom-2 md:bottom-4">
-					<NavbarActions />
-				</div>
-			</div>
+			<nav className="sm:ml-auto flex gap-4 sm:gap-6">
+				<Link
+					className="text-base flex md:text-md hover:underline underline-offset-4"
+					href="#"
+				>
+					<MailIcon size={20} /> : info@zasheva.com
+				</Link>
+
+				<Link className="text-base hover:underline underline-offset-4" href="#">
+					Contact: +359897962266
+				</Link>
+			</nav>
+			<p className="text-xs sm:text-sm md:text-md lg:text-xl text-gray-500 dark:text-gray-400">
+				© Zasheva Kashta. All rights reserved.
+			</p>
 		</motion.footer>
 	);
 };

@@ -8,6 +8,7 @@ import { ArrowDownToDotIcon, Snowflake } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import HeroSection from '@/components/hero-section';
+import AccomSection from '@/components/accom-section';
 
 export const revalidate = 0;
 
@@ -28,24 +29,7 @@ const RootPage = () => {
 					animate={{ opacity: 1 }}
 					transition={{ duration: 1 }}
 				>
-					<motion.div
-						className="snow bg-white h-20 flex w-full text-center object-center justify-center items-center md:rounded-r-xl"
-						initial={{ opacity: 0, x: -100 }}
-						animate={{ opacity: 1, x: 0 }}
-						transition={{ duration: 1, delay: 3.5 }}
-					>
-						<Snowflake />
-						Снежна покривка в Банско - 0 см
-					</motion.div>
-					<motion.div
-						className="snow bg-white h-20 flex w-full text-center object-center justify-center items-center md:rounded-l-xl hover:bg-orange-500 hover:text-white"
-						initial={{ opacity: 0, x: 100 }}
-						animate={{ opacity: 1, x: 0 }}
-						transition={{ duration: 1, delay: 5.5 }}
-					>
-						<ArrowDownToDotIcon />
-						<Link href="/about">Запазете вашата мечтана почивка</Link>
-					</motion.div>
+					<AccomSection />
 				</motion.div>
 			</Container>
 		</motion.div>

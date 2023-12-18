@@ -18,13 +18,13 @@ const AboutPage = () => {
 						<h1>За нас</h1>
 					</div>
 					<div className=" flex w-full text-center justify-center items-center object-center mt-3">
-						<h1 className="text-sm w-1/2 object-center uppercase">
+						<h1 className="text-white text-sm w-1/2 object-center uppercase">
 							Уюта и спокойствието на частния дом, съчетана с лукса на четирите
 							звезди!
 						</h1>
 					</div>
 					<div className="object-center w-full items-center justify-center flex">
-						<p className="p-7">
+						<p className="p-7 text-white">
 							Зашева къща е чудесен вариант за ценителите на спокойствието,
 							домашния уют и индивидуалния подход към изискванията на клиентите.
 							Намираме се само на метри от централният площад на град Банско,

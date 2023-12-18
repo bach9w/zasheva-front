@@ -25,8 +25,9 @@ export default function RootLayout({
 			<body
 				className={font.className + ' min-h-screen flex flex-col'}
 				style={{
-					backgroundImage:
-						'linear-gradient(to right, #c5c3b6, #c2beb3, #a9a69d)',
+					backgroundImage: `url("/background.png")`,
+					backgroundSize: 'cover',
+					backgroundPosition: 'center',
 					height: '100%',
 				}}
 			>
