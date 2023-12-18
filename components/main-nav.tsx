@@ -31,7 +31,7 @@ const MainNav: React.FC<MainNavProps> = ({ data }) => {
 
 	return (
 		<>
-			<nav className="hidden sm:flex space-x-4 lg:space-x-6">
+			<nav className="hidden md:flex space-x-4 lg:space-x-6">
 				{[...staticRoutes, ...routes, ...nextRoutes].map((route) => (
 					<Link key={route.href} href={route.href}>
 						<Button

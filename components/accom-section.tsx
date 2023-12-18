@@ -36,7 +36,7 @@ const AccomSection = ({}) => {
 								</h3>
 							</CardHeader>
 							<CardContent>
-								<p className="text-gray-500 dark:text-gray-400">
+								<p className="text-gray-500 dark:text-gray-400 min-h-[100px]">
 									Централно градско разположение в спокойна зона, близо до
 									исторически забележителности.
 								</p>
@@ -63,7 +63,7 @@ const AccomSection = ({}) => {
 								</h3>
 							</CardHeader>
 							<CardContent>
-								<p className="text-gray-500 dark:text-gray-400">
+								<p className="text-gray-500 dark:text-gray-400 min-h-[100px]">
 									Уютно обзаведени стаи с балкони, които предлагат зашеметяващи
 									изгледи.
 								</p>
@@ -89,7 +89,7 @@ const AccomSection = ({}) => {
 								</h3>
 							</CardHeader>
 							<CardContent>
-								<p className="text-gray-500 dark:text-gray-400">
+								<p className="text-gray-500 dark:text-gray-400 min-h-[100px]">
 									Камина с дърва, барбекю и градина с места за отдих.
 								</p>
 							</CardContent>
@@ -114,7 +114,7 @@ const AccomSection = ({}) => {
 								</h3>
 							</CardHeader>
 							<CardContent>
-								<p className="text-gray-500 dark:text-gray-400">
+								<p className="text-gray-500 dark:text-gray-400 min-h-[100px]">
 									Разнообразни дейности: пешеходни преходи, колоездене и
 									културни мероприятия.
 								</p>
@@ -141,7 +141,7 @@ const AccomSection = ({}) => {
 								</h3>
 							</CardHeader>
 							<CardContent>
-								<p className="text-gray-500 dark:text-gray-400">
+								<p className="text-gray-500 dark:text-gray-400 min-h-[100px]">
 									Приятелски и внимателен персонал, готов да помогне с всяко
 									искане.
 								</p>

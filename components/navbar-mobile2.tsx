@@ -41,7 +41,7 @@ const SideBar: React.FC<MobileNavProps> = ({ routes }) => {
 			<SheetTrigger asChild>
 				<Button
 					onClick={onOpen}
-					className=" absolute top-5 h-10 right-5 flex items-center gap-x-1 sm:hidden"
+					className=" absolute top-5 h-10 sm:top-10 right-5 flex items-center gap-x-1 md:hidden"
 				>
 					МЕНЮ
 					<Plus size={10} />

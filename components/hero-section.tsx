@@ -30,8 +30,8 @@ export default function HeroSection() {
 					transition={{ duration: 0.5 }}
 					className="container px-4 md:px-6"
 				>
-					<div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
-						<div className="flex flex-col justify-end items-end space-y-4 lg:justify-end lg:items-end">
+					<div className="grid gap-6  lg:gap-12">
+						<div className="flex flex-col justify-end items-end space-y-4 ">
 							<motion.div
 								initial={{ opacity: 0, x: 50 }}
 								animate={{ opacity: 1, x: 0 }}
