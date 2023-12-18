@@ -137,7 +137,7 @@ const AccomSection = ({}) => {
 							<CardHeader>
 								<h3 className="text-xl font-bold flex">
 									<User2 />
-									Обслужване
+									Домакини
 								</h3>
 							</CardHeader>
 							<CardContent>
