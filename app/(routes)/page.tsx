@@ -19,8 +19,11 @@ const Page = () => {
 		return null;
 	}
 
-	const onButtonClick = () => {
+	const onButtonClickBG = () => {
 		router.push('/bg');
+	};
+	const onButtonClickEN = () => {
+		router.push('/en');
 	};
 
 	// Optional: Render a loading state or a blank page
@@ -29,22 +32,20 @@ const Page = () => {
 			<div className="bg-white w-full h-20 text-center text-4xl">
 				Добре дошли
 			</div>
-			<div className="h-[100vh] bg-white flex items-start">
-				<div className="relative bg-red-500 h-1/2 w-1/2 items-center group flex hover:bg-white justify-start">
-					<Flag size={300} />
-					<div className="absolute bottom-0 left-[20%] text-2xl text-white group-hover:text-red-500">
-						<Button onClick={onButtonClick}>BULGARIAN</Button>
-					</div>
+			<div className="bg-indigo-500 w-full text-center   sm:bottom-[28%] text-white">
+				Моля изберете език / Please select a language
+			</div>
+			<div className="h-screen   shadow-md rounded-lg overflow-hidden  flex items-start">
+				<div className="relative  h-1/2 w-1/2 justify-center items-center group flex">
+					<Button className="h-20" onClick={onButtonClickBG}>
+						BULGARIAN
+					</Button>
 				</div>
 
-				<div className="relative bg-blue-500 h-1/2 w-1/2 items-center group flex hover:bg-white justify-start">
-					<Flag size={300} />
-					<div className="absolute bottom-0 left-[30%] text-2xl text-white group-hover:text-blue-500">
-						<Button>ENGLISH</Button>
-					</div>
-				</div>
-				<div className="bg-indigo-500 w-full text-center  absolute bottom-[1%] sm:bottom-[28%] text-white">
-					Моля изберете език / Please select a language
+				<div className="relative  h-1/2 w-1/2 justify-center items-center group flex ">
+					<Button className="h-20" onClick={onButtonClickEN}>
+						ENGLISH
+					</Button>
 				</div>
 			</div>
 		</div>
