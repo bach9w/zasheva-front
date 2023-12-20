@@ -3,7 +3,7 @@ import { Urbanist } from 'next/font/google';
 import { Sofia_Sans } from 'next/font/google';
 import './globals.css';
 import Footer from '@/components/footer';
-import Navbar from '@/components/navbar';
+import Navbar1 from '@/components/navbar-lang';
 import ModalProvider from '@/providers/modal-provider';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
@@ -33,11 +33,10 @@ export default function RootLayout({
 			>
 				<Analytics />
 				<SpeedInsights />
-				<Navbar />
+				<Navbar1 />
 				<ModalProvider />
 
 				{children}
-				<Footer />
 			</body>
 		</html>
 	);

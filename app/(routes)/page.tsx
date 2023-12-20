@@ -1,30 +1,54 @@
 'use client';
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { Flag } from 'lucide-react';
+import Button from '@/components/ui/button';
 
-import { motion } from 'framer-motion';
-import React, { createContext } from 'react';
+const Page = () => {
+	const [isMounted, setIsMounted] = useState(false);
 
-import Container from '@/components/ui/container';
-import { ArrowDownToDotIcon, Snowflake } from 'lucide-react';
-import Image from 'next/image';
-import Link from 'next/link';
-import HeroSection from '@/components/hero-section';
-import AccomSection from '@/components/accom-section';
+	const router = useRouter();
 
-export const revalidate = 0;
+	useEffect(() => {
+		setIsMounted(true);
 
-const RootPage = () => {
+		// Redirect to the Bulgarian page
+	}, [isMounted]);
+
+	if (!isMounted) {
+		return null;
+	}
+
+	const onButtonClick = () => {
+		router.push('/bg');
+	};
+
+	// Optional: Render a loading state or a blank page
 	return (
-		<>
-			<motion.div>
-				<Container>
-					<div className="space-y-10 pb-10">
-						<HeroSection />
-						<AccomSection />
+		<div>
+			<div className="bg-white w-full h-20 text-center text-4xl">
+				Добре дошли
+			</div>
+			<div className="h-[100vh] bg-white flex items-start">
+				<div className="relative bg-red-500 h-1/2 w-1/2 items-center group flex hover:bg-white justify-start">
+					<Flag size={300} />
+					<div className="absolute bottom-0 left-[20%] text-2xl text-white group-hover:text-red-500">
+						<Button onClick={onButtonClick}>BULGARIAN</Button>
 					</div>
-				</Container>
-			</motion.div>
-		</>
+				</div>
+
+				<div className="relative bg-blue-500 h-1/2 w-1/2 items-center group flex hover:bg-white justify-start">
+					<Flag size={300} />
+					<div className="absolute bottom-0 left-[30%] text-2xl text-white group-hover:text-blue-500">
+						<Button>ENGLISH</Button>
+					</div>
+				</div>
+				<div className="bg-indigo-500 w-full text-center  absolute bottom-[1%] sm:bottom-[28%] text-white">
+					Моля изберете език / Please select a language
+				</div>
+			</div>
+		</div>
 	);
 };
 
-export default RootPage;
+export default Page;

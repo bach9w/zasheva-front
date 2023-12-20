@@ -2,7 +2,7 @@
 
 import Container from '@/components/ui/container';
 import { motion } from 'framer-motion';
-import ShuffleHero from '@/app/(routes)/about/components/shuffle-hero';
+import ShuffleHero from '@/app/(routes)/bg/about/components/shuffle-hero';
 
 import Image from 'next/image';
 
