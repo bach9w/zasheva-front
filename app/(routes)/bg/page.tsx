@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import React, { createContext } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
 
 import Container from '@/components/ui/container';
 import { ArrowDownToDotIcon, Snowflake } from 'lucide-react';
@@ -13,16 +13,23 @@ import AccomSection from '@/components/accom-section';
 export const revalidate = 0;
 
 const RootPage = () => {
+	const [isClient, setIsClient] = useState(false);
+	useEffect(() => {
+		setIsClient(true);
+	}, []);
+
 	return (
 		<>
-			<motion.div>
-				<Container>
-					<div className="space-y-10 pb-10">
-						<HeroSection />
-						<AccomSection />
-					</div>
-				</Container>
-			</motion.div>
+			{isClient && (
+				<motion.div>
+					<Container>
+						<div className="space-y-10 pb-10">
+							<HeroSection />
+							<AccomSection />
+						</div>
+					</Container>
+				</motion.div>
+			)}
 		</>
 	);
 };
