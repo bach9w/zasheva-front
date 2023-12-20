@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 
 const ShuffleHero = () => {
@@ -9,14 +10,16 @@ const ShuffleHero = () => {
 					Предложенияа
 				</span>
 				<h3 className="text-4xl md:text-6xl font-semibold">
-					Огазиране на почивка
+					Организирай почивката си сега!
 				</h3>
 				<p className="text-base md:text-lg text-slate-700 my-0 md:my-6">
 					Доверие за една незабравима почивка.
 				</p>
-				<button className="bg-gray-500 text-white font-medium py-2 px-4 rounded transition-all hover:bg-indigo-600 active:scale-95">
-					Запази стая
-				</button>
+				<Link href="./category/0d1f31d9-db97-445b-b3c2-795b9a14ad25">
+					<button className="bg-gray-500 text-white font-medium py-2 px-4 rounded transition-all hover:bg-indigo-600 active:scale-95">
+						Запази стая
+					</button>
+				</Link>
 			</div>
 			<ShuffleGrid />
 		</section>
