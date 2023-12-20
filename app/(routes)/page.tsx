@@ -43,7 +43,7 @@ const Page = () => {
 				</div>
 
 				<div className="relative  h-1/2 w-1/2 justify-center items-center group flex ">
-					<Button className="h-20 flex">
+					<Button className="h-20 flex items-center">
 						ENGLISH - <Construction />
 					</Button>
 				</div>
