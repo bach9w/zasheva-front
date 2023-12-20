@@ -86,27 +86,15 @@ const squareData = [
 	},
 	{
 		id: 11,
-		src: 'https://res.cloudinary.com/dvxdywmd6/image/upload/c_crop,g_auto,h_800,w_800/yqarkvhajbpj3krhk6mz.jpg',
+		src: 'https://as2.ftcdn.net/v2/jpg/06/77/56/43/1000_F_677564375_tcnEKb8o8AYNwgHKIg6BQthW8PcHL2Jd.jpg',
 	},
 	{
 		id: 12,
-		src: 'https://res.cloudinary.com/dvxdywmd6/image/upload/c_crop,g_auto,h_800,w_800/yqarkvhajbpj3krhk6mz.jpg',
+		src: 'https://as1.ftcdn.net/v2/jpg/01/80/84/32/1000_F_180843236_lDnATD2KOphbWAW8OQyTUMp6QNRiOY3z.jpg',
 	},
 	{
 		id: 13,
-		src: 'https://res.cloudinary.com/dvxdywmd6/image/upload/c_crop,g_auto,h_800,w_800/mfxvvqstzag4gc00fzkk.jpg',
-	},
-	{
-		id: 14,
-		src: 'https://res.cloudinary.com/dvxdywmd6/image/upload/c_crop,g_auto,h_800,w_800/cju0cxs0ozeh3kouzwpr.jpg',
-	},
-	{
-		id: 15,
-		src: 'https://res.cloudinary.com/dvxdywmd6/image/upload/c_crop,g_auto,h_800,w_800/s4y63i2v7jickdswvslt.jpg',
-	},
-	{
-		id: 16,
-		src: 'https://res.cloudinary.com/dvxdywmd6/image/upload/c_crop,g_auto,h_800,w_800/hoctqqhy2bmantt2fc3f.jpg',
+		src: 'https://as1.ftcdn.net/v2/jpg/05/39/82/12/1000_F_539821201_gSmv9MNRjzzumWiZUQMvqlmuET3XkXnn.jpg',
 	},
 ];
 
