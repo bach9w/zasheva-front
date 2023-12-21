@@ -11,7 +11,7 @@ const Navbar = async () => {
 	const categories = await getCategories();
 	return (
 		<div className="top-0 w-full flex flex-shrink-0 items-center justify-start">
-			<Link href="/bg">
+			<Link href="/">
 				<div className="bg-black items-center p-5   sm:p-10  text-white">
 					ЗАШЕВА КЪЩА
 					<div className="flex justify-center">

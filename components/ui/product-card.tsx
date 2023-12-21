@@ -22,7 +22,7 @@ const ProductCard: React.FC<ProductCard> = ({ data }) => {
 	const router = useRouter();
 
 	const handleClick = () => {
-		router.push(`/bg/product/${data?.id}`);
+		router.push(`/product/${data?.id}`);
 	};
 
 	const onPreview: MouseEventHandler<HTMLButtonElement> = (event) => {

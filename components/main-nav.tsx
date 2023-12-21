@@ -16,20 +16,20 @@ interface MainNavProps {
 const MainNav: React.FC<MainNavProps> = ({ data }) => {
 	const pathname = usePathname();
 	const staticRoutes = [
-		{ href: '/bg', label: 'Начало', active: pathname === '/' },
-		{ href: '/bg/about', label: 'За нас', active: pathname === '/bg/about' },
+		{ href: '/', label: 'Начало', active: pathname === '/' },
+		{ href: '/about', label: 'За нас', active: pathname === '/about' },
 	];
 
 	const routes = data.map((route) => ({
-		href: `/bg/category/${route.id}`,
+		href: `/category/${route.id}`,
 		label: route.name,
-		active: pathname === `/bg/category/${route.id}`,
+		active: pathname === `/category/${route.id}`,
 	}));
 	const nextRoutes = [
 		{
-			href: '/bg/contacts',
+			href: '/contacts',
 			label: 'Контакти',
-			active: pathname === '/bg/contacts',
+			active: pathname === '/contacts',
 		},
 	];
 

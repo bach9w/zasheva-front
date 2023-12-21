@@ -10,17 +10,20 @@ interface Query {
 }
 
 const getProducts = async (query: Query): Promise<Product[]> => {
+	const cacheBustingParam = { _: new Date().getTime().toString() };
+
 	const url = qs.stringifyUrl({
 		url: URL,
 		query: {
-			sizeId: query.sizeId,
-			categoryId: query.categoryId,
-			isFeatured: query.isFeatured,
+			...query,
+			...cacheBustingParam,
 		},
 	});
 
 	const res = await fetch(url);
-
+	if (!res.ok) {
+		throw new Error('Failed');
+	}
 	return res.json();
 };
 
