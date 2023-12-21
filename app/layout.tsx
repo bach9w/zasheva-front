@@ -7,7 +7,6 @@ import Navbar from '@/components/navbar';
 import ModalProvider from '@/providers/modal-provider';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import { HydrationOverlay } from '@builder.io/react-hydration-overlay';
 
 const font = Sofia_Sans({ subsets: ['latin'] });
 
