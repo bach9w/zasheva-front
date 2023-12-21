@@ -25,7 +25,7 @@ const AboutPage = () => {
 								четирите звезди!
 							</h1>
 						</div>
-						<div className="object-center w-full items-center font-thin justify-center flex">
+						<div className="object-center w-full items-center font-light justify-center flex">
 							<p className="p-7 text-black">
 								Зашева къща е чудесен вариант за ценителите на спокойствието,
 								домашния уют и индивидуалния подход към изискванията на
