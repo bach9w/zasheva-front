@@ -2,7 +2,7 @@
 import { InfoIcon, MailIcon, PhoneCallIcon } from 'lucide-react';
 import React, { useState, useEffect } from 'react';
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
-import NavbarActions from './navbar-actions';
+import NavbarActions from './nav/navbar-actions';
 import Link from 'next/link';
 
 const Footer = () => {

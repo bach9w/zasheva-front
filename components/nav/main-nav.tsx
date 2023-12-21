@@ -3,11 +3,10 @@ import { cn } from '@/lib/utils';
 import { Category } from '@/types';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-
-import NavbarActions from './navbar-actions';
+import useScroll from '@/lib/hooks/use-scroll';
 
 import SideBar from './navbar-mobile2';
-import Button from './ui/button';
+import Button from '../ui/button';
 
 interface MainNavProps {
 	data: Category[];
@@ -15,6 +14,8 @@ interface MainNavProps {
 
 const MainNav: React.FC<MainNavProps> = ({ data }) => {
 	const pathname = usePathname();
+	const scrolled = useScroll(50);
+
 	const staticRoutes = [
 		{ href: '/', label: 'Начало', active: pathname === '/' },
 		{ href: '/about', label: 'За нас', active: pathname === '/about' },
@@ -35,7 +36,7 @@ const MainNav: React.FC<MainNavProps> = ({ data }) => {
 
 	return (
 		<>
-			<nav className="hidden md:flex space-x-4 lg:space-x-6">
+			<nav className={`hidden md:flex  space-x-4 lg:space-x-6 `}>
 				{[...staticRoutes, ...routes, ...nextRoutes].map((route) => (
 					<Link key={route.href} href={route.href}>
 						<Button

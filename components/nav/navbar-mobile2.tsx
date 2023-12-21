@@ -7,10 +7,10 @@ import {
 	SheetTitle,
 	SheetTrigger,
 } from '@/components/ui/sheet';
-import Button from './ui/button';
+import Button from '../ui/button';
 import { Plus, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
-import IconButton from './ui/icon-button';
+import IconButton from '../ui/icon-button';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
 

@@ -3,10 +3,11 @@ import { Urbanist } from 'next/font/google';
 import { Sofia_Sans } from 'next/font/google';
 import '@/app/globals.css';
 import Footer from '@/components/footer';
-import Navbar from '@/components/navbar';
+
 import ModalProvider from '@/providers/modal-provider';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import Nav from '@/components/nav';
 
 const font = Sofia_Sans({ subsets: ['latin'] });
 
@@ -33,7 +34,7 @@ export default function RootLayout({
 			>
 				<Analytics />
 				<SpeedInsights />
-				<Navbar />
+				<Nav />
 				<ModalProvider />
 
 				{children}

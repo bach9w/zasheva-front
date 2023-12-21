@@ -11,7 +11,7 @@ export const revalidate = 0;
 const Navbar = async () => {
 	const categories = await getCategories();
 	return (
-		<div className="top-0 bg-black sm:bg-transparent flex justify-start flex-shrink-0 items-center sm:justify-start">
+		<div className="top-0  bg-black sm:bg-transparent flex justify-start flex-shrink-0 items-center sm:justify-start">
 			<Link href="/">
 				<LogoNav />
 			</Link>
