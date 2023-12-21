@@ -19,6 +19,7 @@ const Navbar = async () => {
 						<Star color="yellow" />
 						<Star color="yellow" size={20} />
 					</div>
+					ГР. БАНСКО
 				</div>
 			</Link>
 
