@@ -36,7 +36,7 @@ export default function HeroSection() {
 								initial={{ opacity: 0, x: 50 }}
 								animate={{ opacity: 1, x: 0 }}
 								transition={{ duration: 1, delay: 1.0 }}
-								className="space-y-2 text-center bg-white text-black bg-opacity-50 max-w-[200px] lg:max-w-[600px]"
+								className="space-y-2 text-center bg-white text-black bg-opacity-80 max-w-[200px] lg:max-w-[600px]"
 							>
 								<h1 className="text-5xl font-bold tracking-tighter text-black md:text-7xl xl:text-8xl/none">
 									Добре дошли
