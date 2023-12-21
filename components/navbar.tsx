@@ -4,23 +4,16 @@ import MainNav from './main-nav';
 import getCategories from '@/actions/get-categories';
 
 import { Star } from 'lucide-react';
+import LogoNav from './logo-nav';
 
 export const revalidate = 0;
 
 const Navbar = async () => {
 	const categories = await getCategories();
 	return (
-		<div className="top-0 w-full flex flex-shrink-0 items-center justify-start">
+		<div className="top-0 bg-black sm:bg-transparent flex justify-start flex-shrink-0 items-center sm:justify-start">
 			<Link href="/">
-				<div className="bg-black text-center items-center p-5   sm:p-10  text-white">
-					ЗАШЕВА КЪЩА
-					<div className="flex justify-center">
-						<Star color="yellow" size={20} />
-						<Star color="yellow" />
-						<Star color="yellow" size={20} />
-					</div>
-					БАНСКО
-				</div>
+				<LogoNav />
 			</Link>
 
 			<div className="flex justify-between items-center max-w-7xl min-w-0 min-h-0 mx-5 ">
