@@ -1,16 +1,14 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import React, { createContext, useEffect, useState } from 'react';
+import { motion } from "framer-motion";
+import React, { createContext, useEffect, useState } from "react";
 
-import Container from '@/components/ui/container';
-import { ArrowDownToDotIcon, Snowflake } from 'lucide-react';
-import Image from 'next/image';
-import Link from 'next/link';
-import HeroSection from '@/components/hero-section';
-import AccomSection from '@/components/accom-section';
-
-export const revalidate = 0;
+import Container from "@/components/ui/container";
+import { ArrowDownToDotIcon, Snowflake } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import HeroSection from "@/components/hero-section";
+import AccomSection from "@/components/accom-section";
 
 const RootPage = () => {
 	const [isClient, setIsClient] = useState(false);

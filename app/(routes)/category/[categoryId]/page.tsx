@@ -41,9 +41,9 @@ const CategoryPage: React.FC<CategoryPageProps> = async ({
 							<Filter valueKey="sizeId" name="Sizes" data={sizes} />
 							<MobileFilters size={sizes} />
 						</div>
-						<div className="mt-6 lg:col-span-4 lg:mt-0">
+						<div className="mt-6 lg:col-span-4 flex flex-col  ">
 							{product.length === 0 && <NoResults />}
-							<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+							<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
 								{product.map((item) => (
 									<ProductCard key={item.id} data={item} />
 								))}

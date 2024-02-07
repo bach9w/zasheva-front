@@ -1,16 +1,16 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import { MouseEventHandler } from 'react';
-import { BookUpIcon, CalendarPlus, Expand, ShoppingCart } from 'lucide-react';
-import { useRouter } from 'next/navigation';
-import { motion } from 'framer-motion';
+import Image from "next/image";
+import { MouseEventHandler } from "react";
+import { BookUpIcon, CalendarPlus, Expand, ShoppingCart } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { motion } from "framer-motion";
 
-import Currency from '@/components/ui/currency';
-import IconButton from '@/components/ui/icon-button';
-import usePreviewModal from '@/hooks/use-preview-modal';
+import Currency from "@/components/ui/currency";
+import IconButton from "@/components/ui/icon-button";
+import usePreviewModal from "@/hooks/use-preview-modal";
 
-import { Product } from '@/types';
+import { Product } from "@/types";
 
 interface ProductCard {
 	data: Product;
@@ -69,12 +69,12 @@ const ProductCard: React.FC<ProductCard> = ({ data }) => {
 				</div>
 			</div>
 			{/* Description */}
-			<div>
+			<div className=" bg-white flex justify-center h-[50px]">
 				<p className="font-semibold text-lg">{data.name}</p>
 				<p className="text-sm text-gray-500">{data.category?.name}</p>
 			</div>
 			{/* Price & Reiew */}
-			<div className="flex items-center justify-between">
+			<div className=" flex items-end justify-center">
 				<Currency value={data?.price} />
 			</div>
 		</motion.div>

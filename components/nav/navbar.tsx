@@ -1,12 +1,10 @@
-import Link from 'next/link';
+import Link from "next/link";
 
-import MainNav from './main-nav';
-import getCategories from '@/actions/get-categories';
+import MainNav from "./main-nav";
+import getCategories from "@/actions/get-categories";
 
-import { Star } from 'lucide-react';
-import LogoNav from './logo-nav';
-
-export const revalidate = 0;
+import { Star } from "lucide-react";
+import LogoNav from "./logo-nav";
 
 const Navbar = async () => {
 	const categories = await getCategories();
