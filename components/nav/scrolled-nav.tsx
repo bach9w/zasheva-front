@@ -2,6 +2,7 @@
 import useScroll from '@/lib/hooks/use-scroll';
 import LogoNav from './logo-nav';
 import { motion } from 'framer-motion';
+import Button from '../ui/button';
 
 const ScrolledNav = () => {
 	const scrolled = useScroll(100);
