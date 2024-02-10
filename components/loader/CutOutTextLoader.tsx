@@ -14,7 +14,7 @@ const Example = () => {
 	return (
 		<>
 			<div className="h-screen z-20 top-0  w-full absolute ">
-				<div className="bg-white">
+				<div className="">
 					<div className="absolute z-30 grid place-content-center h-full w-full  px-4 py-24">
 						<BarLoader />
 					</div>
