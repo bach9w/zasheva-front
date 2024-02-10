@@ -1,10 +1,11 @@
-'use client';
+"use client";
 
-import Container from '@/components/ui/container';
-import { motion } from 'framer-motion';
-import ShuffleHero from '@/app/(routes)/about/components/shuffle-hero';
+import Container from "@/components/ui/container";
+import { motion } from "framer-motion";
+import ShuffleHero from "@/app/(routes)/about/components/shuffle-hero";
 
-import Image from 'next/image';
+import Image from "next/image";
+import Example from "@/components/loader/CutOutTextLoader";
 
 const AboutPage = () => {
 	return (

@@ -7,6 +7,7 @@ import Filter from "./components/filter";
 import NoResults from "@/components/ui/no-results";
 import ProductCard from "@/components/ui/product-card";
 import MobileFilters from "./components/mobile-filters";
+import Example from "@/components/loader/CutOutTextLoader";
 import { motion } from "framer-motion";
 
 interface CategoryPageProps {
@@ -32,6 +33,7 @@ const CategoryPage: React.FC<CategoryPageProps> = async ({
 
 	return (
 		<div className="">
+			<Example />
 			<Container>
 				<Billboard data={category.billboard} />
 

@@ -1,20 +1,20 @@
-import React, { useCallback, useState } from 'react';
-import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
+import React, { useCallback, useState } from "react";
+import { GoogleMap, useJsApiLoader, Marker } from "@react-google-maps/api";
 
 const containerStyle = {
-	width: '100%',
-	height: '400px',
+	width: "100%",
+	height: "400px",
 };
 
 const center = {
-	lat: 41.839168,
-	lng: 23.489183,
+	lat: 41.839237213134766,
+	lng: 23.489301681518555,
 };
 
 function MyGoogleMap() {
 	const { isLoaded } = useJsApiLoader({
-		id: 'google-map-script',
-		googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || '',
+		id: "google-map-script",
+		googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || "",
 	});
 
 	const [map, setMap] = useState(null);
@@ -33,7 +33,7 @@ function MyGoogleMap() {
 		<GoogleMap
 			mapContainerStyle={containerStyle}
 			center={center}
-			zoom={19}
+			zoom={17}
 			onLoad={onLoad}
 			onUnmount={onUnmount}
 		>

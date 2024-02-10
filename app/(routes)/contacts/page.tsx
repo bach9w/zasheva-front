@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import Container from '@/components/ui/container';
-import { motion } from 'framer-motion';
-import MyGoogleMap from '@/components/googleMaps/map';
-import Component from './components/email-form';
+import Container from "@/components/ui/container";
+import { motion } from "framer-motion";
+import MyGoogleMap from "@/components/googleMaps/map";
+import Component from "./components/email-form";
 
 const ContactPage = () => {
 	return (
@@ -21,8 +21,9 @@ const ContactPage = () => {
 						<MyGoogleMap />
 					</div>
 					<div className="bg-black text-white mt-2 text-sm md:text-xl grid-col-1 text-center object-center justify-center">
-						<div className="flex justify-center mb-2">
-							Адрес - гр. Банско - Тома Вишанов 3
+						<div className="flex flex-col justify-center mb-2">
+							гр. Банско
+							<br /> Тома Вишанов 3
 						</div>
 					</div>
 				</div>
