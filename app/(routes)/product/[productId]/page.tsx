@@ -1,17 +1,18 @@
-import getProduct from '@/actions/get-product';
-import getProducts from '@/actions/get-products';
-import ProductList from '@/components/product-list';
-import Container from '@/components/ui/container';
-import { SwipeCarousel } from '@/components/ui/gallery/swipeCarousel';
-import Info from '@/components/info';
-import Button from '@/components/ui/button';
+import getProduct from "@/actions/get-product";
+import getProducts from "@/actions/get-products";
+import ProductList from "@/components/product-list";
+import Container from "@/components/ui/container";
+import { SwipeCarousel } from "@/components/ui/gallery/swipeCarousel";
+import Info from "@/components/info";
+import Button from "@/components/ui/button";
 import {
 	BellRingIcon,
 	CalendarCheck,
 	PhoneCall,
 	PlusCircleIcon,
-} from 'lucide-react';
-import Link from 'next/link';
+} from "lucide-react";
+import Link from "next/link";
+import Example from "@/components/loader/CutOutTextLoader";
 
 interface ProductPageProps {
 	params: {
@@ -26,6 +27,7 @@ const ProductPage: React.FC<ProductPageProps> = async ({ params }) => {
 	});
 	return (
 		<div className="bg-white">
+			<Example />
 			<Container>
 				<div className="sm:hidden bg-black h-[50px] flex items-center justify-center ">
 					<div className=" items-center flex gap-x-4">
