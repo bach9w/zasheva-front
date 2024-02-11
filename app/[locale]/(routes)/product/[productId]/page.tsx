@@ -13,13 +13,17 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import Example from "@/components/loader/CutOutTextLoader";
-import { getCurrentLocale } from "@/locales/server";
+import { getCurrentLocale, getStaticParams } from "@/locales/server";
 import { setStaticParamsLocale } from "next-international/server";
 
 interface ProductPageProps {
 	params: {
 		productId: string;
 	};
+}
+
+export function generateStaticParams() {
+	return getStaticParams();
 }
 
 const ProductPage: React.FC<ProductPageProps> = async ({ params }) => {

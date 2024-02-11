@@ -9,7 +9,7 @@ import ProductCard from "@/components/ui/product-card";
 import MobileFilters from "./components/mobile-filters";
 import Example from "@/components/loader/CutOutTextLoader";
 import { motion } from "framer-motion";
-import { getCurrentLocale } from "@/locales/server";
+import { getCurrentLocale, getStaticParams } from "@/locales/server";
 import { setStaticParamsLocale } from "next-international/server";
 
 interface CategoryPageProps {
@@ -19,6 +19,10 @@ interface CategoryPageProps {
 	searchParams: {
 		sizeId: string;
 	};
+}
+
+export function generateStaticParams() {
+	return getStaticParams();
 }
 
 const CategoryPage: React.FC<CategoryPageProps> = async ({
