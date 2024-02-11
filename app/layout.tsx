@@ -24,11 +24,12 @@ export function generateStaticParams() {
 
 export default function RootLayout({
 	children,
+	params: { locale },
 }: {
 	children: React.ReactNode;
+	params: { locale: string };
 }) {
-	const currentLocale = getCurrentLocale();
-	setStaticParamsLocale(currentLocale);
+	setStaticParamsLocale(locale);
 	return (
 		<html>
 			<body
@@ -43,7 +44,7 @@ export default function RootLayout({
 				<Analytics />
 				<SpeedInsights />
 				<Nav />
-				<ModalProvider locale={currentLocale} />
+				<ModalProvider locale={locale} />
 
 				{children}
 				<Footer />
