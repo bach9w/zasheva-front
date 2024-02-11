@@ -2,7 +2,7 @@
 
 import Container from "@/components/ui/container";
 import { motion } from "framer-motion";
-import ShuffleHero from "@/app/[locale]/(routes)/about/components/shuffle-hero";
+import ShuffleHero from "@/app/[locale]/about/components/shuffle-hero";
 import { useI18n } from "@/locales/client";
 
 import Image from "next/image";

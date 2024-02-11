@@ -12,6 +12,9 @@ import { motion } from "framer-motion";
 import { getCurrentLocale, getStaticParams } from "@/locales/server";
 import { setStaticParamsLocale } from "next-international/server";
 
+export function generateStaticParams() {
+	return getStaticParams();
+}
 interface CategoryPageProps {
 	params: {
 		categoryId: string;

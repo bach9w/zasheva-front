@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Urbanist } from "next/font/google";
 import { Sofia_Sans } from "next/font/google";
-import "@/app/globals.css";
+import "@/app/[locale]/globals.css";
 import Footer from "@/components/footer";
 import { setStaticParamsLocale } from "next-international/server";
 
@@ -17,7 +17,6 @@ export const metadata: Metadata = {
 	title: "Zasheva - Bansko",
 	description: "Zasheva house - Bansko",
 };
-
 export function generateStaticParams() {
 	return getStaticParams();
 }
@@ -29,7 +28,6 @@ export default function RootLayout({
 	children: React.ReactNode;
 	params: { locale: string };
 }) {
-	setStaticParamsLocale(locale);
 	return (
 		<html>
 			<body

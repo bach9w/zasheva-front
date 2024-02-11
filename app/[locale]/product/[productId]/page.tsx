@@ -22,7 +22,9 @@ interface ProductPageProps {
 		locale: string;
 	};
 }
-
+export function generateStaticParams() {
+	return getStaticParams();
+}
 const ProductPage: React.FC<ProductPageProps> = async ({ params }) => {
 	setStaticParamsLocale(params.locale);
 	const product = await getProduct(params.productId);
