@@ -13,7 +13,7 @@ interface MainNavProps {
 	data: Category[];
 }
 
-const MainNav: React.FC<{ data: string[]; locale: string }> = ({
+const MainNav: React.FC<{ data: Category[]; locale: string }> = ({
 	locale,
 	data,
 }) => {
@@ -30,12 +30,12 @@ const MainNav: React.FC<{ data: string[]; locale: string }> = ({
 		{ href: "/en/about", label: "About", active: pathname === "/en/about" },
 	];
 
-	const routes = data.map((route) => ({
+	const routes = data.map((route: { id: string; name: string }) => ({
 		href: `/bg/category/${route.id}`,
 		label: route.name,
 		active: pathname === `/bg/category/${route.id}`,
 	}));
-	const routesEn = data.map((route) => ({
+	const routesEn = data.map((route: { id: string; name: string }) => ({
 		href: `/en/category/${route.id}`,
 		label: "Rooms",
 		active: pathname === `/en/category/${route.id}`,
