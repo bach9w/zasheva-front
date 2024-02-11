@@ -3,6 +3,7 @@ import { Urbanist } from "next/font/google";
 import { Sofia_Sans } from "next/font/google";
 import "@/app/globals.css";
 import Footer from "@/components/footer";
+import { setStaticParamsLocale } from "next-international/server";
 
 import ModalProvider from "@/providers/modal-provider";
 import { getCurrentLocale } from "@/locales/server";
@@ -23,6 +24,7 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	const currentLocale = getCurrentLocale();
+	setStaticParamsLocale(currentLocale);
 	return (
 		<html lang="en">
 			<body
