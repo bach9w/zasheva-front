@@ -12,9 +12,6 @@ import { motion } from "framer-motion";
 import { getCurrentLocale, getStaticParams } from "@/locales/server";
 import { setStaticParamsLocale } from "next-international/server";
 
-export function generateStaticParams() {
-	return getStaticParams();
-}
 interface CategoryPageProps {
 	params: {
 		categoryId: string;
@@ -29,7 +26,6 @@ const CategoryPage: React.FC<CategoryPageProps> = async ({
 	params,
 	searchParams,
 }) => {
-	setStaticParamsLocale(params.locale);
 	const product = await getProducts({
 		categoryId: params.categoryId,
 		sizeId: searchParams.sizeId,
