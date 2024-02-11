@@ -2,12 +2,14 @@
 
 import Container from "@/components/ui/container";
 import { motion } from "framer-motion";
-import ShuffleHero from "@/app/(routes)/about/components/shuffle-hero";
+import ShuffleHero from "@/app/[locale]/(routes)/about/components/shuffle-hero";
+import { useI18n } from "@/locales/client";
 
 import Image from "next/image";
 import Example from "@/components/loader/CutOutTextLoader";
 
 const AboutPage = () => {
+	const t = useI18n();
 	return (
 		<>
 			<motion.div
@@ -18,27 +20,15 @@ const AboutPage = () => {
 				<Container>
 					<div className="text-center bg-white  justify-center object-center w-full">
 						<div className="bg-black text-white mb-1">
-							<h1>За нас</h1>
+							<h1>{t("aboutMainTitle")}</h1>
 						</div>
 						<div className=" flex w-full text-center justify-center items-center object-center mt-3">
 							<h1 className="text-black text-sm w-1/2 object-center uppercase">
-								Уюта и спокойствието на частния дом, съчетана с лукса на
-								четирите звезди!
+								{t("aboutTextTitle")}
 							</h1>
 						</div>
 						<div className="object-center w-full items-center font-light justify-center flex">
-							<p className="p-7 text-black">
-								Зашева къща е чудесен вариант за ценителите на спокойствието,
-								домашния уют и индивидуалния подход към изискванията на
-								клиентите. Намираме се само на метри от централният площад на
-								град Банско, който открива врати за всички Вас, както за
-								културни прояви и забележителности така и за незабравими нощи.
-								Разполагаме с шест двойни стаи и едно студио. Всички стаи са
-								оборудвани с най-необходимите неща за една перфектна почивка. На
-								разположение на нашите гости има още лоби бар, място за хранене
-								и отдих с просторна градина, 24 часова рецепция и паркинг. По
-								желание може да бъде предложена закуска.
-							</p>
+							<p className="p-7 text-black">{t("aboutText")}</p>
 						</div>
 						<div className=" w-full flex text-white mt-2 text-sm md:text-xl grid-col-1 text-center object-center justify-center">
 							<div className="flex bg-blue-500 text-white items-center text-center justify-center rounded-full w-10 h-10 ">
@@ -49,7 +39,12 @@ const AboutPage = () => {
 							Booking.com - Guest Review 2023
 						</div>
 					</div>
-					<ShuffleHero />
+					<ShuffleHero
+						aboutRed={t("aboutRed")}
+						aboutTravel={t("aboutTravel")}
+						aboutTravelText={t("aboutTravelText")}
+						aboutTravelButton={t("aboutTravelButton")}
+					/>
 				</Container>
 			</motion.div>
 		</>

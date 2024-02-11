@@ -1,8 +1,8 @@
-'use client';
-import React, { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
+"use client";
+import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
-import { Star } from 'lucide-react';
+import { PhoneCall, Star } from "lucide-react";
 
 const LogoNav = () => {
 	return (
@@ -21,6 +21,9 @@ const LogoNav = () => {
 					<Star color="yellow" size={20} />
 				</div>
 				БАНСКО
+				<div className="flex">
+					<PhoneCall /> +359897971010
+				</div>
 			</div>
 		</motion.div>
 	);

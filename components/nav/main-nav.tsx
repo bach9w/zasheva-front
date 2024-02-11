@@ -4,6 +4,7 @@ import { Category } from "@/types";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import useScroll from "@/lib/hooks/use-scroll";
+import { useChangeLocale } from "@/locales/client";
 
 import SideBar from "./navbar-mobile2";
 import Button from "../ui/button";
@@ -18,10 +19,11 @@ const MainNav: React.FC<{ data: string[]; locale: string }> = ({
 }) => {
 	const pathname = usePathname();
 	const scrolled = useScroll(50);
+	const changeLocale = useChangeLocale();
 
 	const staticRoutes = [
-		{ href: "/", label: "Начало", active: pathname === "/" },
-		{ href: "/about", label: "За нас", active: pathname === "/about" },
+		{ href: "/bg/", label: "Начало", active: pathname === "/bg" },
+		{ href: "/bg/about", label: "За нас", active: pathname === "/bg/about" },
 	];
 	const staticRoutesEn = [
 		{ href: "/en", label: "Home", active: pathname === "/en" },
@@ -29,9 +31,9 @@ const MainNav: React.FC<{ data: string[]; locale: string }> = ({
 	];
 
 	const routes = data.map((route) => ({
-		href: `/category/${route.id}`,
+		href: `/bg/category/${route.id}`,
 		label: route.name,
-		active: pathname === `/category/${route.id}`,
+		active: pathname === `/bg/category/${route.id}`,
 	}));
 	const routesEn = data.map((route) => ({
 		href: `/en/category/${route.id}`,
@@ -40,9 +42,9 @@ const MainNav: React.FC<{ data: string[]; locale: string }> = ({
 	}));
 	const nextRoutes = [
 		{
-			href: "/contacts",
+			href: "/bg/contacts",
 			label: "Контакти",
-			active: pathname === "/contacts",
+			active: pathname === "/bg/contacts",
 		},
 	];
 	const nextRoutesEn = [
@@ -69,6 +71,9 @@ const MainNav: React.FC<{ data: string[]; locale: string }> = ({
 							</Button>
 						</Link>
 					))}
+					<Button type="button" onClick={() => changeLocale("en")}>
+						EN
+					</Button>
 				</nav>
 			) : (
 				<nav className={`hidden md:flex  space-x-4 lg:space-x-6 `}>
@@ -84,6 +89,9 @@ const MainNav: React.FC<{ data: string[]; locale: string }> = ({
 							</Button>
 						</Link>
 					))}
+					<Button type="button" onClick={() => changeLocale("bg")}>
+						BG
+					</Button>
 				</nav>
 			)}
 

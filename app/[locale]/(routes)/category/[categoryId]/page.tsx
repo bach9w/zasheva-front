@@ -9,6 +9,7 @@ import ProductCard from "@/components/ui/product-card";
 import MobileFilters from "./components/mobile-filters";
 import Example from "@/components/loader/CutOutTextLoader";
 import { motion } from "framer-motion";
+import { getCurrentLocale } from "@/locales/server";
 
 interface CategoryPageProps {
 	params: {
@@ -27,6 +28,7 @@ const CategoryPage: React.FC<CategoryPageProps> = async ({
 		categoryId: params.categoryId,
 		sizeId: searchParams.sizeId,
 	});
+	const locale = getCurrentLocale();
 
 	const sizes = await getSizes();
 	const category = await getCategory(params.categoryId);
@@ -47,7 +49,7 @@ const CategoryPage: React.FC<CategoryPageProps> = async ({
 							{product.length === 0 && <NoResults />}
 							<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
 								{product.map((item) => (
-									<ProductCard key={item.id} data={item} />
+									<ProductCard locale={locale} key={item.id} data={item} />
 								))}
 							</div>
 						</div>

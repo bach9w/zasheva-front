@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import Example from "@/components/loader/CutOutTextLoader";
+import { getCurrentLocale } from "@/locales/server";
 
 interface ProductPageProps {
 	params: {
@@ -25,6 +26,8 @@ const ProductPage: React.FC<ProductPageProps> = async ({ params }) => {
 	const suggestedProducts = await getProducts({
 		categoryId: product.category?.id,
 	});
+	const locale = getCurrentLocale();
+	const listTitle = locale === "bg" ? "Предложения" : "Suggested rooms";
 	return (
 		<div className="bg-white">
 			<Example />
@@ -49,11 +52,12 @@ const ProductPage: React.FC<ProductPageProps> = async ({ params }) => {
 					<div className="lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-8">
 						<SwipeCarousel images={product.images} />
 						<div className="mt-10 px-4 sm:mt-16 sm:px-0 lg:mt-0">
-							<Info data={product} />
+							<Info locale={locale} data={product} />
 						</div>
 					</div>
 					<hr className="my-10" />
-					<ProductList title="Предложения" items={suggestedProducts} />
+
+					<ProductList title={listTitle} items={suggestedProducts} />
 				</div>
 			</Container>
 		</div>

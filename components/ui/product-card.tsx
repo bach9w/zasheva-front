@@ -12,11 +12,15 @@ import usePreviewModal from "@/hooks/use-preview-modal";
 
 import { Product } from "@/types";
 
-interface ProductCard {
+interface ProductCardProps {
 	data: Product;
+	locale: string;
 }
 
-const ProductCard: React.FC<ProductCard> = ({ data }) => {
+const ProductCard: React.FC<ProductCardProps> = ({
+	data,
+	locale,
+}: ProductCardProps) => {
 	const previewModal = usePreviewModal();
 
 	const router = useRouter();
@@ -70,7 +74,15 @@ const ProductCard: React.FC<ProductCard> = ({ data }) => {
 			</div>
 			{/* Description */}
 			<div className=" bg-white flex justify-center h-[50px]">
-				<p className="font-semibold text-lg">{data.name}</p>
+				<p className="font-semibold text-lg">
+					{locale === "bg"
+						? data.name
+						: data.name === "Двойна стая с тераса"
+						? "Double room with terrace"
+						: data.name === "Двойна стая с вана"
+						? "Double room with bath"
+						: "Studio room with terrace"}
+				</p>
 				<p className="text-sm text-gray-500">{data.category?.name}</p>
 			</div>
 			{/* Price & Reiew */}

@@ -13,6 +13,7 @@ import { useEffect, useState } from "react";
 import IconButton from "../ui/icon-button";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { useChangeLocale } from "@/locales/client";
 
 interface MobileNavProps {
 	routes: {
@@ -20,17 +21,23 @@ interface MobileNavProps {
 		label: string;
 		active: boolean;
 	}[];
+	text: string;
 }
 
 const SideBar = ({
 	routes,
 	text,
 }: {
+	routes: {
+		href: string;
+		label: string;
+		active: boolean;
+	}[];
 	text: string;
-	routes: MobileNavProps;
 }) => {
 	const [open, setOpen] = useState(false);
 	const [isMounted, setIsMounted] = useState(false);
+	const changeLocale = useChangeLocale();
 
 	useEffect(() => {
 		setIsMounted(true);
@@ -42,6 +49,7 @@ const SideBar = ({
 
 	const onOpen = () => setOpen(true);
 	const onClose = () => setOpen(false);
+
 	return (
 		<Sheet>
 			<SheetTrigger asChild>
@@ -55,7 +63,18 @@ const SideBar = ({
 			</SheetTrigger>
 			<SheetContent side={"bottom"}>
 				<SheetHeader>
-					<SheetTitle>{text}</SheetTitle>
+					<SheetTitle className="flex-col flex">
+						{text === "Меню" ? (
+							<Button type="button" onClick={() => changeLocale("en")}>
+								EN
+							</Button>
+						) : (
+							<Button type="button" onClick={() => changeLocale("bg")}>
+								BG
+							</Button>
+						)}
+						<div className="flex items-center justify-center h-10">{text}</div>
+					</SheetTitle>
 					<SheetDescription>
 						<div>
 							{[...routes].map((route) => (

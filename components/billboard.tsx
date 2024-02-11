@@ -1,6 +1,8 @@
-'use client';
-import { Billboard as BillboardType } from '@/types';
-import { motion } from 'framer-motion';
+"use client";
+import { getCurrentLocale } from "@/locales/server";
+import { Billboard as BillboardType } from "@/types";
+import { motion } from "framer-motion";
+import { useEffect } from "react";
 
 interface BillboardProps {
 	data: BillboardType;
@@ -10,6 +12,7 @@ const Billboard: React.FC<BillboardProps> = ({ data }) => {
 	if (!data) {
 		return <div>Loading...</div>;
 	}
+
 	return (
 		<motion.div
 			initial={{ opacity: 1, y: -300 }}
@@ -23,7 +26,7 @@ const Billboard: React.FC<BillboardProps> = ({ data }) => {
 					style={{ backgroundImage: `url(${data?.imageUrl})` }}
 				></div>
 				<div className="p-1 bg-opacity-80 bg-orange-500 text-white h-[60px]">
-					{data?.label}
+					ZASHEVA - BANSKO
 				</div>
 			</div>
 		</motion.div>
