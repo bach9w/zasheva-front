@@ -21,10 +21,6 @@ interface CategoryPageProps {
 	};
 }
 
-export function generateStaticParams() {
-	return getStaticParams();
-}
-
 const CategoryPage: React.FC<CategoryPageProps> = async ({
 	params,
 	searchParams,
@@ -34,7 +30,6 @@ const CategoryPage: React.FC<CategoryPageProps> = async ({
 		sizeId: searchParams.sizeId,
 	});
 	const locale = getCurrentLocale();
-	setStaticParamsLocale(locale);
 
 	const sizes = await getSizes();
 	const category = await getCategory(params.categoryId);

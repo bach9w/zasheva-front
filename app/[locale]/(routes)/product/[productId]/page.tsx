@@ -22,17 +22,13 @@ interface ProductPageProps {
 	};
 }
 
-export function generateStaticParams() {
-	return getStaticParams();
-}
-
 const ProductPage: React.FC<ProductPageProps> = async ({ params }) => {
 	const product = await getProduct(params.productId);
 	const suggestedProducts = await getProducts({
 		categoryId: product.category?.id,
 	});
 	const locale = getCurrentLocale();
-	setStaticParamsLocale(locale);
+
 	const listTitle = locale === "bg" ? "Предложения" : "Suggested rooms";
 	return (
 		<div className="bg-white">
