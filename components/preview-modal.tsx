@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
-import usePreviewModal from '@/hooks/use-preview-modal';
+import usePreviewModal from "@/hooks/use-preview-modal";
 
-import Info from '@/components/info';
-import Modal from '@/components/ui/modal';
+import Info from "@/components/info";
+import Modal from "@/components/ui/modal";
 
-import { SwipeCarousel } from './ui/gallery/swipeCarousel';
+import { SwipeCarousel } from "./ui/gallery/swipeCarousel";
 
-const PreviewModal = () => {
+const PreviewModal = ({ locale }: { locale: string }) => {
 	const previewModal = usePreviewModal();
 	const product = usePreviewModal((state) => state.data);
 
@@ -22,7 +22,7 @@ const PreviewModal = () => {
 					<SwipeCarousel images={product.images} />
 				</div>
 				<div className="sm:col-span-8 lg:col-span-7">
-					<Info data={product} />
+					<Info locale={locale} data={product} />
 				</div>
 			</div>
 		</Modal>
