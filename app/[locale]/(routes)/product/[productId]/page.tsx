@@ -28,7 +28,7 @@ const ProductPage: React.FC<ProductPageProps> = async ({ params }) => {
 		categoryId: product.category?.id,
 	});
 	const locale = getCurrentLocale();
-
+	setStaticParamsLocale(locale);
 	const listTitle = locale === "bg" ? "Предложения" : "Suggested rooms";
 	return (
 		<div className="bg-white">

@@ -12,7 +12,7 @@ export default async function Home({
 	params: { locale: string };
 }) {
 	// Uncomment to test Static Generation
-
+	setStaticParamsLocale(locale);
 	const t = await getI18n();
 
 	return (
