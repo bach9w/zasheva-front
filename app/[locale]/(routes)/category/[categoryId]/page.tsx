@@ -15,6 +15,7 @@ import { setStaticParamsLocale } from "next-international/server";
 interface CategoryPageProps {
 	params: {
 		categoryId: string;
+		locale: string;
 	};
 	searchParams: {
 		sizeId: string;
@@ -25,6 +26,7 @@ const CategoryPage: React.FC<CategoryPageProps> = async ({
 	params,
 	searchParams,
 }) => {
+	setStaticParamsLocale(params.locale);
 	const product = await getProducts({
 		categoryId: params.categoryId,
 		sizeId: searchParams.sizeId,

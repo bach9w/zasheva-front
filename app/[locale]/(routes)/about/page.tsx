@@ -7,17 +7,15 @@ export function generateStaticParams() {
 	return getStaticParams();
 }
 
-// @eslint-disable-next-line @typescript-eslint/no-unused-vars
 export default async function Home({
 	params: { locale },
 }: {
 	params: { locale: string };
 }) {
+	setStaticParamsLocale(locale);
 	// Uncomment to test Static Generation
 
 	const t = await getI18n();
-	setStaticParamsLocale(locale);
-	generateStaticParams();
 
 	return (
 		<div>

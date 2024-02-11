@@ -19,16 +19,18 @@ import { setStaticParamsLocale } from "next-international/server";
 interface ProductPageProps {
 	params: {
 		productId: string;
+		locale: string;
 	};
 }
 
 const ProductPage: React.FC<ProductPageProps> = async ({ params }) => {
+	setStaticParamsLocale(params.locale);
 	const product = await getProduct(params.productId);
 	const suggestedProducts = await getProducts({
 		categoryId: product.category?.id,
 	});
-	const locale = getCurrentLocale();
-	setStaticParamsLocale(locale);
+	const locale = params.locale;
+
 	const listTitle = locale === "bg" ? "Предложения" : "Suggested rooms";
 	return (
 		<div className="bg-white">
