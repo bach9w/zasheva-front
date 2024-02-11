@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { getCurrentLocale } from "@/locales/server";
 
 import MainNav from "./main-nav";
 import getCategories from "@/actions/get-categories";
@@ -8,6 +9,7 @@ import LogoNav from "./logo-nav";
 
 const Navbar = async () => {
 	const categories = await getCategories();
+	const locale = getCurrentLocale();
 	return (
 		<div className="top-0  bg-black sm:bg-transparent flex justify-start flex-shrink-0 items-center sm:justify-start">
 			<Link href="/">
@@ -15,7 +17,7 @@ const Navbar = async () => {
 			</Link>
 
 			<div className="flex justify-between items-center max-w-7xl min-w-0 min-h-0 mx-5 ">
-				<MainNav data={categories} />
+				<MainNav locale={locale} data={categories} />
 			</div>
 		</div>
 	);

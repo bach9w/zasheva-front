@@ -1,5 +1,5 @@
-import { CardHeader, CardContent, Card } from '@/components/ui/card';
-import { motion } from 'framer-motion';
+import { CardHeader, CardContent, Card } from "@/components/ui/card";
+import { motion } from "framer-motion";
 import {
 	Accessibility,
 	DrumstickIcon,
@@ -8,13 +8,37 @@ import {
 	LocateIcon,
 	Option,
 	User2,
-} from 'lucide-react';
-const AccomSection = ({}) => {
+} from "lucide-react";
+const AccomSection = ({
+	AcomSectionTitle,
+	section1title,
+	section1text,
+	section2title,
+	section2text,
+	section3title,
+	section3text,
+	section4title,
+	section4text,
+	section5title,
+	section5text,
+}: {
+	AcomSectionTitle: string;
+	section1title: string;
+	section1text: string;
+	section2title: string;
+	section2text: string;
+	section3title: string;
+	section3text: string;
+	section4title: string;
+	section4text: string;
+	section5title: string;
+	section5text: string;
+}) => {
 	return (
 		<section className=" w-full py-0 md:py-24 lg:py-32 ">
 			<div className="container px-3 md:px-6">
 				<h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center text-white">
-					Информация за настаняване
+					{AcomSectionTitle}
 				</h2>
 				<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-8">
 					<motion.div
@@ -32,13 +56,12 @@ const AccomSection = ({}) => {
 							<CardHeader>
 								<h3 className="text-xl font-bold flex">
 									<LocateIcon />
-									Локация
+									{section1title}
 								</h3>
 							</CardHeader>
 							<CardContent>
 								<p className="text-gray-500 dark:text-gray-400 min-h-[100px]">
-									Централно градско разположение в спокойна зона, близо до
-									исторически забележителности.
+									{section1text}
 								</p>
 							</CardContent>
 						</Card>
@@ -59,13 +82,12 @@ const AccomSection = ({}) => {
 							<CardHeader>
 								<h3 className="text-xl font-bold flex">
 									<Option />
-									Удобства
+									{section2title}
 								</h3>
 							</CardHeader>
 							<CardContent>
 								<p className="text-gray-500 dark:text-gray-400 min-h-[100px]">
-									Уютно обзаведени стаи с балкони, които предлагат зашеметяващи
-									изгледи.
+									{section2text}
 								</p>
 							</CardContent>
 						</Card>
@@ -85,12 +107,12 @@ const AccomSection = ({}) => {
 							<CardHeader>
 								<h3 className="text-xl font-bold flex">
 									<FlameKindling />
-									Място за отдих
+									{section3title}
 								</h3>
 							</CardHeader>
 							<CardContent>
 								<p className="text-gray-500 dark:text-gray-400 min-h-[100px]">
-									Камина с дърва, барбекю и градина с места за отдих.
+									{section3text}
 								</p>
 							</CardContent>
 						</Card>
@@ -110,13 +132,12 @@ const AccomSection = ({}) => {
 							<CardHeader>
 								<h3 className="text-xl font-bold flex">
 									<GamepadIcon />
-									Развлечения
+									{section4title}
 								</h3>
 							</CardHeader>
 							<CardContent>
 								<p className="text-gray-500 dark:text-gray-400 min-h-[100px]">
-									Разнообразни дейности: пешеходни преходи, колоездене и
-									културни мероприятия.
+									{section4text}
 								</p>
 							</CardContent>
 						</Card>
@@ -137,13 +158,12 @@ const AccomSection = ({}) => {
 							<CardHeader>
 								<h3 className="text-xl font-bold flex">
 									<User2 />
-									Домакини
+									{section5title}
 								</h3>
 							</CardHeader>
 							<CardContent>
 								<p className="text-gray-500 dark:text-gray-400 min-h-[100px]">
-									Приятелски и внимателен персонал, готов да помогне с всяко
-									искане.
+									{section5text}
 								</p>
 							</CardContent>
 						</Card>

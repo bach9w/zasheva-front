@@ -1,16 +1,23 @@
-import Button from './ui/button';
-import { useRouter } from 'next/navigation';
-import { motion } from 'framer-motion';
+import Button from "./ui/button";
+import { useRouter } from "next/navigation";
+import { motion } from "framer-motion";
 
-export default function HeroSection() {
+export default function HeroSection({
+	heroSectionMain,
+	heroSectionText,
+	heroSectionButton,
+	heroSectionMainText,
+}: {
+	heroSectionMain: string;
+	heroSectionText: string;
+	heroSectionButton: string;
+	heroSectionMainText: string;
+}) {
 	const router = useRouter();
-	const text =
-		'Мечтаната почивка съчетана с удоволствието от зимните спортове и прекрасната природа'.split(
-			' ',
-		);
+	const text = heroSectionMainText.split(" ");
 
 	const onClick = () => {
-		router.push('/about');
+		router.push("/about");
 	};
 	return (
 		<>
@@ -21,7 +28,7 @@ export default function HeroSection() {
 				className="w-full py-6 sm:py-12 md:py-24 lg:py-32 xl:py-48 bg-cover bg-center"
 				style={{
 					backgroundImage: `linear-gradient(to bottom, #c5c3b6, #c2beb3, #a9a69d),url('/hero.png?height=1080&width=1920')`,
-					backgroundBlendMode: 'saturation',
+					backgroundBlendMode: "saturation",
 				}}
 			>
 				<motion.div
@@ -39,12 +46,10 @@ export default function HeroSection() {
 								className="space-y-2 text-center bg-white text-black bg-opacity-80 max-w-[200px] lg:max-w-[600px]"
 							>
 								<h1 className="text-5xl font-bold tracking-tighter text-black md:text-7xl xl:text-8xl/none">
-									Добре дошли
+									{heroSectionMain}
 								</h1>
 								<p className="text-lg text-black md:text-xl dark:text-gray-400 ">
-									Изпитайте магията на зимата като никога досега. Усетете уюта
-									на камината, насладете се на нашите стаи или се отдайте на
-									пистите.
+									{heroSectionText}
 								</p>
 							</motion.div>
 							<motion.div
@@ -57,7 +62,7 @@ export default function HeroSection() {
 									onClick={onClick}
 									className="inline-flex h-10 items-center justify-center rounded-md bg-white px-8 text-sm font-medium text-gray-900 shadow transition-colors hover:bg-gray-100 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300"
 								>
-									Научете повече за нас
+									{heroSectionButton}
 								</Button>
 							</motion.div>
 						</div>
@@ -75,7 +80,7 @@ export default function HeroSection() {
 						}}
 						key={i}
 					>
-						{el}{' '}
+						{el}{" "}
 					</motion.span>
 				))}
 			</div>
