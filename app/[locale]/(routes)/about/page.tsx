@@ -17,6 +17,7 @@ export default async function Home({
 
 	const t = await getI18n();
 	setStaticParamsLocale(locale);
+	generateStaticParams();
 
 	return (
 		<div>
