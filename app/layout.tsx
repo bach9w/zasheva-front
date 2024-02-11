@@ -26,7 +26,7 @@ export default function RootLayout({
 	const currentLocale = getCurrentLocale();
 	setStaticParamsLocale(currentLocale);
 	return (
-		<html lang="en">
+		<html>
 			<body
 				className={font.className + " min-h-screen flex flex-col"}
 				style={{
