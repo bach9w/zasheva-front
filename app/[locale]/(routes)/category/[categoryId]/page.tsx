@@ -10,6 +10,7 @@ import MobileFilters from "./components/mobile-filters";
 import Example from "@/components/loader/CutOutTextLoader";
 import { motion } from "framer-motion";
 import { getCurrentLocale } from "@/locales/server";
+import { setStaticParamsLocale } from "next-international/server";
 
 interface CategoryPageProps {
 	params: {
@@ -29,6 +30,7 @@ const CategoryPage: React.FC<CategoryPageProps> = async ({
 		sizeId: searchParams.sizeId,
 	});
 	const locale = getCurrentLocale();
+	setStaticParamsLocale(locale);
 
 	const sizes = await getSizes();
 	const category = await getCategory(params.categoryId);

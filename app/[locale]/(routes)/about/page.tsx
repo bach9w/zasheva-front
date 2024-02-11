@@ -1,4 +1,4 @@
-// import { setStaticParamsLocale } from 'next-international/server';
+import { setStaticParamsLocale } from "next-international/server";
 import { getI18n, getScopedI18n, getCurrentLocale } from "@/locales/server";
 import Client from "./client";
 import { Provider } from "../../provider";
@@ -15,7 +15,7 @@ export default async function Home({
 	params: { locale: string };
 }) {
 	// Uncomment to test Static Generation
-	// setStaticParamsLocale(locale);
+	setStaticParamsLocale(locale);
 
 	const t = await getI18n();
 

@@ -14,6 +14,7 @@ import {
 import Link from "next/link";
 import Example from "@/components/loader/CutOutTextLoader";
 import { getCurrentLocale } from "@/locales/server";
+import { setStaticParamsLocale } from "next-international/server";
 
 interface ProductPageProps {
 	params: {
@@ -27,6 +28,7 @@ const ProductPage: React.FC<ProductPageProps> = async ({ params }) => {
 		categoryId: product.category?.id,
 	});
 	const locale = getCurrentLocale();
+	setStaticParamsLocale(locale);
 	const listTitle = locale === "bg" ? "Предложения" : "Suggested rooms";
 	return (
 		<div className="bg-white">
