@@ -6,7 +6,7 @@ import Footer from "@/components/footer";
 import { setStaticParamsLocale } from "next-international/server";
 
 import ModalProvider from "@/providers/modal-provider";
-import { getCurrentLocale } from "@/locales/server";
+import { getCurrentLocale, getStaticParams } from "@/locales/server";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Nav from "@/components/nav";
@@ -17,6 +17,10 @@ export const metadata: Metadata = {
 	title: "Zasheva - Bansko",
 	description: "Zasheva house - Bansko",
 };
+
+export function generateStaticParams() {
+	return getStaticParams();
+}
 
 export default function RootLayout({
 	children,
