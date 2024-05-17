@@ -1,4 +1,4 @@
-import Button from "./ui/button";
+import { Button } from "./ui/button";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 
@@ -25,10 +25,12 @@ export default function HeroSection({
 				initial={{ opacity: 0, scale: 1, x: -1150 }}
 				animate={{ opacity: 1, scale: 1, x: 0 }}
 				transition={{ duration: 1 }}
-				className="w-full py-6 sm:py-12 md:py-24 lg:py-32 xl:py-48 bg-cover bg-center"
+				viewport={{ once: true }}
+				className="w-full min-h-[600px] p-5 py-0 sm:py-12 md:py-24 lg:py-32 xl:py-48  bg-[-400px]"
 				style={{
 					backgroundImage: `linear-gradient(to bottom, #c5c3b6, #c2beb3, #a9a69d),url('/hero.png?height=1080&width=1920')`,
 					backgroundBlendMode: "saturation",
+					backgroundPosition: "cover",
 				}}
 			>
 				<motion.div
@@ -37,18 +39,18 @@ export default function HeroSection({
 					transition={{ duration: 0.5 }}
 					className="container px-4 md:px-6"
 				>
-					<div className="grid gap-6  lg:gap-12">
+					<div className="grid gap-12">
 						<div className="flex flex-col justify-end items-end space-y-4 ">
 							<motion.div
 								initial={{ opacity: 0, x: 50 }}
 								animate={{ opacity: 1, x: 0 }}
 								transition={{ duration: 1, delay: 1.0 }}
-								className="space-y-2 text-center bg-white text-black bg-opacity-80 max-w-[200px] lg:max-w-[600px]"
+								className="space-y-2 text-center bg-white text-black bg-opacity-80 min-h-full lg:max-w-[600px]"
 							>
-								<h1 className="text-5xl font-bold tracking-tighter text-black md:text-7xl xl:text-8xl/none">
+								<h1 className="text-[70px] font-bold h-full flex justify-center items-center tracking-tighter text-black md:text-7xl xl:text-8xl/none">
 									{heroSectionMain}
 								</h1>
-								<p className="text-lg text-black md:text-xl dark:text-gray-400 ">
+								<p className="text-lg hidden sm:visible text-black md:text-xl dark:text-gray-400 ">
 									{heroSectionText}
 								</p>
 							</motion.div>
@@ -69,21 +71,6 @@ export default function HeroSection({
 					</div>
 				</motion.div>
 			</motion.section>
-			<div className="moving-letter text-center h-20 bg-black bg-opacity-70 text-lg md:text-3xl text-white">
-				{text.map((el, i) => (
-					<motion.span
-						initial={{ opacity: 0 }}
-						animate={{ opacity: 1 }}
-						transition={{
-							duration: 2.25,
-							delay: i / 10,
-						}}
-						key={i}
-					>
-						{el}{" "}
-					</motion.span>
-				))}
-			</div>
 		</>
 	);
 }
