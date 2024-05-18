@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-import { Image as ImageType } from '@/types';
+import { Image as ImageType } from "@/types";
 
-import { useSwipeable } from 'react-swipeable';
-import Image from 'next/image';
-import Button from '../button';
-import { ArrowBigLeft, ArrowBigRight } from 'lucide-react';
+import { useSwipeable } from "react-swipeable";
+import Image from "next/image";
+import { Button } from "../button";
+import { ArrowBigLeft, ArrowBigRight } from "lucide-react";
 
 interface GalleryProps {
 	images: ImageType[];
@@ -37,7 +37,7 @@ const Gallery: React.FC<GalleryProps> = ({ images }) => {
 			<div
 				{...handlers}
 				className="relative overflow-hidden mx-auto"
-				style={{ width: '90%', height: '70%' }}
+				style={{ width: "90%", height: "70%" }}
 			>
 				<Image
 					width={300}
