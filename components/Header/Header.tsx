@@ -5,7 +5,7 @@ import { GiCctvCamera } from "react-icons/gi";
 
 const Header = () => {
 	return (
-		<div className="fixed w-full bg-[#2a1e1d] h-[100px] p-5">
+		<div className="fixed z-20 w-full bg-[#2a1e1d] h-[100px] p-5">
 			<div className=" w-full fixed flex items-center justify-center  text-white "></div>
 			<div className="flex gap-4">
 				<Button className="bg-orange-500">BANSKO</Button>

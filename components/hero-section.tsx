@@ -29,7 +29,7 @@ export default function HeroSection({
 				className="w-full min-h-[600px] p-5 py-0 sm:py-12 md:py-24 lg:py-32 xl:py-48  bg-[-400px]"
 				style={{
 					backgroundImage: `linear-gradient(to bottom, #c5c3b6, #c2beb3, #a9a69d),url('/hero.png?height=1080&width=1920')`,
-					backgroundBlendMode: "saturation",
+					backgroundBlendMode: "multiply",
 					backgroundPosition: "cover",
 				}}
 			>

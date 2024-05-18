@@ -1,0 +1,27 @@
+.start {
+	height: 100vh;
+	position: relative;
+	background: #494639; /* fallback for old browsers */
+	background: -webkit-linear-gradient(
+		to bottom,
+		#6e6a60,
+		#828282
+	); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(
+		to bottom,
+		#6e6a60,
+		#828282
+	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.main {
+	height: full;
+	position: relative;
+
+	background: -webkit-linear-gradient(
+		to bottom,
+		#a48f55,
+		#828282
+	); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to bottom, #a48f55, #828282);
+}

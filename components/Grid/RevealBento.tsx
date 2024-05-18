@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { isSameDay } from "date-fns";
-import { DayMouseEventHandler, DayPicker } from "react-day-picker";
+import { isSameDay, set } from "date-fns";
+import { DateRange, DayMouseEventHandler, DayPicker } from "react-day-picker";
 import { MotionProps, motion } from "framer-motion";
 import { twMerge } from "tailwind-merge";
 import { FiArrowLeft, FiArrowRight, FiMail, FiMapPin } from "react-icons/fi";
@@ -12,14 +12,32 @@ import {
 	SiTwitter,
 	SiYoutube,
 } from "react-icons/si";
-import { LocateIcon } from "lucide-react";
+import { LocateIcon, SearchCheckIcon } from "lucide-react";
 import { Badge } from "../ui/badge";
 import { Calendar } from "../ui/calendar";
 import { cn } from "@/lib/utils";
+import "react-day-picker/src/style.css";
+import Image from "next/image";
+import { Button } from "../ui/button";
+import { Checkbox } from "../ui/checkbox";
+
+import {
+	Form,
+	FormControl,
+	FormDescription,
+	FormField,
+	FormItem,
+	FormLabel,
+} from "@/components/ui/form";
+
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import { Input } from "../ui/input";
 
 export const RevealBento = () => {
 	return (
-		<div className="min-h-screen bg-[#2a1e1d] bg-opacity-50 px-4 py-12 text-zinc-50">
+		<div className="min-h-screen  px-4 py-12 text-zinc-50">
 			<motion.div
 				initial="initial"
 				animate="animate"
@@ -29,7 +47,6 @@ export const RevealBento = () => {
 				}}
 				className="mx-auto grid max-w-4xl grid-flow-dense grid-cols-12 gap-4"
 			>
-				<Block className="col-span-12 mt-[150px]"></Block>
 				<HeaderBlock />
 				<SocialsBlock />
 				<AboutBlock />
@@ -66,7 +83,7 @@ const Block = ({ className, ...rest }: BlockProps) => {
 				damping: 50,
 			}}
 			className={twMerge(
-				"col-span-4 rounded-lg border border-zinc-100 bg-zinc-200 p-6",
+				"col-span-4 rounded-lg border-none bg-white p-6",
 				className,
 			)}
 			{...rest}
@@ -76,10 +93,16 @@ const Block = ({ className, ...rest }: BlockProps) => {
 
 const HeaderBlock = () => (
 	<Block className="col-span-12 row-span-2 md:col-span-6">
-		<img src="/map.jpg" alt="avatar" className="mb-4 size-14 rounded-full" />
+		<Image
+			width={500}
+			height={500}
+			src="/map.jpg"
+			alt="avatar"
+			className="mb-4 size-14 rounded-full"
+		/>
 		<h1 className="mb-12 text-4xl font-medium leading-tight">
-			Добре дошли.
-			<span className="text-zinc-400"> by ZASHEVA</span>
+			<span className=" text-zinc-400">Добре дошли.</span>
+			<span className="text-white text-[20px]"> by ZASHEVA</span>
 		</h1>
 		<a
 			href="#"
@@ -196,7 +219,10 @@ const LocationBlock = () => (
 
 function CustomMultiple() {
 	const [value, setValue] = useState<Date[]>([]);
-
+	const initiallySelectedDate = new Date();
+	const [selectedDate, setSelectedDate] = useState<DateRange | any>(
+		initiallySelectedDate,
+	);
 	const handleDayClick: DayMouseEventHandler = (day, modifiers) => {
 		const newValue = [...value];
 		if (modifiers.selected) {
@@ -206,6 +232,7 @@ function CustomMultiple() {
 			newValue.push(day);
 		}
 		setValue(newValue);
+		setSelectedDate({ from: newValue[0], to: newValue[newValue.length - 1] });
 	};
 
 	const handleResetClick = () => setValue([]);
@@ -215,44 +242,133 @@ function CustomMultiple() {
 	if (value.length > 0)
 		footer = (
 			<>
-				You selected {value.length} days.{" "}
-				<button onClick={handleResetClick}>Reset</button>
+				<div className="flex flex-col w-full justify-center items-center bg-red-800 text-white">
+					{value.length === 1 ? (
+						<>
+							Избрали сте {value.length} ден.{" "}
+							<button onClick={handleResetClick}>Рестарт</button>
+						</>
+					) : (
+						<>
+							Избрали сте {value.length} дни.{" "}
+							<button onClick={handleResetClick}>Рестарт</button>
+						</>
+					)}
+				</div>
 			</>
 		);
 
 	return (
 		<Calendar
-			className="w-full flex justify-center gap-2 bg-black rounded"
+			selected={selectedDate}
+			className="w-full flex justify-center gap-2 text-black  px-3 py-1.5 transition-colors focus:border-red-300 focus:outline-0"
 			onDayClick={handleDayClick}
+			modifiersStyles={{
+				selected: {
+					color: "white",
+					backgroundColor: "#679dee",
+					borderRadius: 25,
+				},
+			}}
+			styles={{}}
 			modifiers={{ selected: value, disabled: { before: new Date() } }}
 			footer={footer}
 		/>
 	);
 }
 
+const FormSchema = z.object({
+	mobile: z.boolean().default(false).optional(),
+	numberOfGuests: z.number().optional(),
+	numberOfKids: z.number().optional(),
+});
+
 const EmailListBlock = () => {
+	const [childrenIn, setChildrenIn] = useState<boolean>(false);
+	const form = useForm<z.infer<typeof FormSchema>>({
+		resolver: zodResolver(FormSchema),
+		defaultValues: {
+			mobile: true,
+			numberOfGuests: 0,
+			numberOfKids: 0,
+		},
+	});
+	function onSubmit(data: z.infer<typeof FormSchema>) {
+		console.log(data);
+	}
 	return (
 		<Block className="col-span-12 md:col-span-9">
 			<Badge className="w-[200px] h-[20px] bg-red-800 mb-5">Резервация</Badge>
-			<form
-				onSubmit={(e) => e.preventDefault()}
-				className="flex flex-col items-center gap-2"
-			>
-				<CustomMultiple />
 
-				<input
-					type="email"
-					placeholder="Брой гости"
-					className="w-full rounded border border-zinc-700 bg-zinc-800 px-3 py-1.5 transition-colors focus:border-red-300 focus:outline-0"
-				/>
+			<Form {...form}>
+				<form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+					<CustomMultiple />
+					<FormField
+						control={form.control}
+						name="numberOfGuests"
+						render={({ field }) => (
+							<FormItem className="flex flex-col items-center justify-center bg-red-800 text-white gap-6 space-x-3 space-y-0 rounded-md border p-4">
+								<FormLabel>Брой гости?</FormLabel>
+								<FormDescription>
+									<FormControl>
+										<Input type="number" {...field} />
+									</FormControl>
+								</FormDescription>
+								<div className="space-y-1 leading-none">
+									<FormDescription>Отбележете брой гости</FormDescription>
+								</div>
+							</FormItem>
+						)}
+					/>
+					<FormField
+						control={form.control}
+						name="mobile"
+						render={({ field }) => (
+							<FormItem className="flex flex-row bg-red-800 text-white items-start space-x-3 space-y-0 rounded-md border p-4">
+								<FormControl>
+									<Checkbox
+										checked={field.value}
+										onCheckedChange={field.onChange}
+									/>
+								</FormControl>
+								<div className="space-y-1 leading-none">
+									<FormLabel>Деца?</FormLabel>
+									<FormDescription>
+										Отбележете при резервация с деца.
+									</FormDescription>
+								</div>
+								{field.value && (
+									<FormField
+										control={form.control}
+										name="numberOfKids"
+										render={({ field }) => (
+											<FormItem className="flex flex-col items-center justify-center bg-red-800 text-white gap-6 space-x-3 space-y-0 rounded-md border p-4">
+												<FormDescription>
+													<FormControl>
+														<Input type="number" {...field} />
+													</FormControl>
+												</FormDescription>
+												<div className="space-y-1 leading-none">
+													<FormDescription>
+														Отбележете брой деца
+													</FormDescription>
+												</div>
+											</FormItem>
+										)}
+									/>
+								)}
+							</FormItem>
+						)}
+					/>
 
-				<button
-					type="submit"
-					className="flex items-center gap-2 whitespace-nowrap rounded bg-zinc-50 px-3 py-2 text-sm font-medium text-zinc-900 transition-colors hover:bg-zinc-300"
-				>
-					<FiMail /> РЕЗЕРВИРАЙ СЕГА
-				</button>
-			</form>
+					<Button
+						className="bg-red-800 flex items-center justify-center hover:bg-black hover:text-red-800"
+						type="submit"
+					>
+						Провери наличност <SearchCheckIcon />
+					</Button>
+				</form>
+			</Form>
 		</Block>
 	);
 };
