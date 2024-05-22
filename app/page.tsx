@@ -4,28 +4,32 @@ import styles from "./styles/section1.module.scss";
 
 import HeroSection from "@/components/hero-section";
 import Images from "@/components/Image";
+import Rooms from "@/components/rooms_reservation/rooms";
 
 const Page = () => {
-	return (
-		<>
-			<section id="start" className={styles.start}>
-				<div className="min-h-screen w-full bg-gradient-to-r from-[#6d6027] to-[#D3CBB8]  px-4 py-12 text-zinc-50">
-					<div className="bg-white h-screen w-full justify-center items-center flex bg-opacity-0">
-						<HeroSection
-							heroSectionButton="гр. Банско"
-							heroSectionMain="ЗАШЕВА КЪЩА"
-							heroSectionMainText="ГОДИНИ НА ЗАДРУЖНОСТ И УЮТ"
-							heroSectionText="ОТКРИЙТЕ УЮТА И ЧИСТОТАТА"
-						/>
-					</div>
-				</div>
-			</section>
-			<Images />
-			<section id="main" className={styles.main}>
-				<RevealBento />
-			</section>
-		</>
-	);
+  return (
+    <>
+      <section id="start" className={styles.start}>
+        <div className="min-h-screen w-full   px-4 py-12 text-zinc-50">
+          <div className="flex h-screen w-full items-center justify-center bg-white bg-opacity-0">
+            <HeroSection
+              heroSectionButton="гр. Банско"
+              heroSectionMain="ЗАШЕВА КЪЩА"
+              heroSectionMainText="ГОДИНИ НА ЗАДРУЖНОСТ И УЮТ"
+              heroSectionText="ОТКРИЙТЕ УЮТА И ЧИСТОТАТА"
+            />
+          </div>
+        </div>
+      </section>
+      <Images />
+      <section id="main" className={styles.main}>
+        <div id="box" className={styles.box}>
+          <RevealBento />
+          <Rooms />
+        </div>
+      </section>
+    </>
+  );
 };
 
 export default Page;
@@ -52,5 +56,25 @@ export default Page;
 						/>
 					</div>
 				</div>
+			</section>
+
+			//
+
+
+				<section id="start" className={styles.start}>
+				<div className="min-h-screen w-full bg-gradient-to-r from-[#6d6027] to-[#D3CBB8]  px-4 py-12 text-zinc-50">
+					<div className="bg-white h-screen w-full justify-center items-center flex bg-opacity-0">
+						<HeroSection
+							heroSectionButton="гр. Банско"
+							heroSectionMain="ЗАШЕВА КЪЩА"
+							heroSectionMainText="ГОДИНИ НА ЗАДРУЖНОСТ И УЮТ"
+							heroSectionText="ОТКРИЙТЕ УЮТА И ЧИСТОТАТА"
+						/>
+					</div>
+				</div>
+			</section>
+			<Images />
+			<section id="main" className={styles.main}>
+				<RevealBento />
 			</section>
  */

@@ -3,11 +3,14 @@
 @tailwind utilities;
 
 :root {
-	--rdp-accent-color: indigo;
-	--rdp-background-color: gray;
+  --rdp-accent-color: indigo;
+  --rdp-background-color: gray;
+  background-image: url("/abst.png");
+  background-repeat: repeat-y;
+  background-size: 100% 90vh;
 }
 
 .selected-day {
-	background-color: blue !important;
-	color: white !important;
+  background-color: blue !important;
+  color: white !important;
 }
