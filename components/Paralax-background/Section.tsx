@@ -1,5 +1,6 @@
 import Image from "next/image";
-import Background from "../../public/images/1.jpg";
+import Background from "../../public/background.png";
+import Center from "../../public/images/hero.png";
 import { useScroll, useTransform, motion } from "framer-motion";
 import { useRef } from "react";
 import { Button } from "../ui/moving-border";
@@ -26,6 +27,7 @@ export default function Section() {
           Уюта и спокойствието имат нужда от внимание, дори в свят на прекалено
           много прибързаност.
         </Button>
+
         <Button
           borderRadius="1.75rem"
           className="  border-sky-800 bg-slate-600 bg-opacity-20  text-white"
@@ -35,12 +37,7 @@ export default function Section() {
       </div>
       <div className="fixed left-0 top-[-10vh] h-[120vh] w-full">
         <motion.div style={{ y }} className="relative h-full w-full">
-          <Image
-            src={Background}
-            fill
-            alt="image"
-            style={{ objectFit: "cover" }}
-          />
+          <Image src={Center} fill alt="image" style={{ objectFit: "cover" }} />
         </motion.div>
       </div>
     </div>
