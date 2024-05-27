@@ -5,27 +5,17 @@ import styles from "./styles/section1.module.scss";
 import HeroSection from "@/components/hero-section";
 import Images from "@/components/Image";
 import Rooms from "@/components/rooms_reservation/rooms";
+import ParalaxHero from "@/components/Paralax-background/paralax";
 
 const Page = () => {
   return (
     <>
-      <section id="start" className={styles.start}>
-        <div className="min-h-screen w-full   px-4 py-12 text-zinc-50">
-          <div className="flex h-screen w-full items-center justify-center bg-white bg-opacity-0">
-            <HeroSection
-              heroSectionButton="гр. Банско"
-              heroSectionMain="ЗАШЕВА КЪЩА"
-              heroSectionMainText="ГОДИНИ НА ЗАДРУЖНОСТ И УЮТ"
-              heroSectionText="ОТКРИЙТЕ УЮТА И ЧИСТОТАТА"
-            />
-          </div>
-        </div>
-      </section>
+      <ParalaxHero />
+
       <Images />
       <section id="main" className={styles.main}>
         <div id="box" className={styles.box}>
           <RevealBento />
-          <Rooms />
         </div>
       </section>
     </>

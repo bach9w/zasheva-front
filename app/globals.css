@@ -5,7 +5,7 @@
 :root {
   --rdp-accent-color: indigo;
   --rdp-background-color: gray;
-  background-image: url("/abst.png");
+
   background-repeat: repeat-y;
   background-size: 100% 90vh;
 }

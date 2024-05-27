@@ -41,7 +41,7 @@ import { GiBoxingGlove, GiGardeningShears, GiKeyCard } from "react-icons/gi";
 const Rooms = () => {
   return (
     <>
-      <div className="h-screen">
+      <div className="h-screen p-4 md:p-20 ">
         <div className="flex h-full w-full flex-col items-center justify-center  ">
           <h1 className="hidden text-2xl font-medium uppercase md:flex ">
             Свободни стаи за избраните дати
@@ -65,7 +65,7 @@ const Rooms = () => {
               <div className="mt-3 grid grid-cols-2 gap-2 ">
                 <div className="col-span-2 flex h-[150px] w-full flex-col items-center justify-center rounded bg-orange-600 bg-opacity-50 p-2  uppercase text-black shadow-lg shadow-inherit md:col-span-3 xl:col-span-4">
                   {" "}
-                  <div className="flex w-full items-center justify-center gap-2 bg-gray-300 bg-opacity-60  text-center">
+                  <div className="flex w-full items-center justify-center gap-2 rounded-sm bg-gray-100 bg-opacity-60 p-2 text-center shadow-md shadow-white drop-shadow-lg">
                     Удобства <Mountain />
                   </div>
                   <p className=" bg-white p-2 text-[10px] ">
@@ -76,65 +76,65 @@ const Rooms = () => {
                   <div className="mt-2 grid grid-cols-6 items-center justify-center gap-3">
                     <FcWiFiLogo
                       size={30}
-                      className="rounded-xl bg-gray-300 bg-opacity-60 p-1"
+                      className="rounded-xl bg-gray-300 bg-opacity-20 p-1 hover:bg-blue-500"
                     />
 
                     <IoBedOutline
                       color="black"
                       size={30}
-                      className="rounded-xl bg-gray-300 bg-opacity-60 p-1"
+                      className="rounded-xl bg-gray-300 bg-opacity-20 p-1 hover:bg-blue-500"
                     />
                     <IoWater
                       size={30}
                       color="black"
-                      className="rounded-xl bg-gray-300 bg-opacity-60 p-1"
+                      className="rounded-xl bg-gray-300 bg-opacity-20 p-1 hover:bg-blue-500"
                     />
                     <FaToilet
                       size={30}
                       color="black"
-                      className="rounded-xl bg-gray-300 bg-opacity-60 p-1"
+                      className="rounded-xl bg-gray-300 bg-opacity-20 p-1 hover:bg-blue-500"
                     />
                     <FaToiletPaper
                       size={30}
                       color="black"
-                      className="rounded-xl bg-gray-300 bg-opacity-60 p-1 hover:bg-blue-500"
+                      className="rounded-xl bg-gray-300 bg-opacity-20 p-1 hover:bg-blue-500"
                     />
                     <FaParking
                       size={30}
-                      className="rounded-xl bg-gray-300 bg-opacity-60 p-1 hover:bg-blue-500"
+                      className="rounded-xl bg-gray-300 bg-opacity-20 p-1 hover:bg-blue-500"
                     />
                   </div>
                 </div>
 
                 <div className="col-span-1 flex h-[150px] w-full flex-col items-center justify-center rounded bg-orange-600  bg-opacity-50 p-3 uppercase text-black shadow-lg shadow-inherit">
                   {" "}
-                  <div className="flex w-full  items-center justify-center gap-2 rounded-sm bg-gray-300 bg-opacity-60 p-2 text-center shadow-md shadow-white drop-shadow-lg">
+                  <div className="flex w-full  items-center justify-center gap-2 rounded-sm bg-gray-100 bg-opacity-60 p-2 text-center shadow-md shadow-white drop-shadow-lg">
                     Информация <InfoIcon />
                   </div>
                   <div
                     className=" grid h-full w-full grid-cols-3  items-center
                     justify-center"
                   >
-                    <div className="drop-shadow-3xl flex h-full w-full items-center justify-center  gap-2 ">
+                    <div className="flex h-full w-full items-center justify-center gap-2 bg-gray-300 bg-opacity-20 drop-shadow-3xl  hover:bg-blue-500 ">
                       2
-                      <BedDouble />
+                      <BedDouble className=" " />
                     </div>
-                    <div className="flex h-full w-full items-center justify-center gap-2">
+                    <div className="flex h-full w-full items-center justify-center gap-2 bg-gray-300 bg-opacity-20 drop-shadow-3xl  hover:bg-blue-500 ">
                       1
                       <ShowerHead />
                     </div>
-                    <div className="flex h-full w-full items-center justify-center gap-2">
+                    <div className="flex h-full w-full items-center justify-center gap-2 bg-gray-300 bg-opacity-20 drop-shadow-3xl  hover:bg-blue-500 ">
                       1
                       <Tv />
                     </div>
-                    <div className="flex h-full w-full items-center justify-center gap-2">
+                    <div className="flex h-full w-full items-center justify-center gap-2 bg-gray-300 bg-opacity-20 drop-shadow-3xl  hover:bg-blue-500 ">
                       2
                       <Coffee />
                     </div>
-                    <div className="flex h-full w-full items-center justify-center gap-2">
+                    <div className="flex h-full w-full items-center justify-center gap-2 bg-gray-300 bg-opacity-20 drop-shadow-3xl  hover:bg-blue-500 ">
                       <GiKeyCard size={30} />
                     </div>
-                    <div className="flex items-center justify-center">
+                    <div className="flex h-full w-full items-center justify-center gap-2 bg-gray-300 bg-opacity-20 drop-shadow-3xl  hover:bg-blue-500 ">
                       <GiBoxingGlove size={30} />
                     </div>
                   </div>
