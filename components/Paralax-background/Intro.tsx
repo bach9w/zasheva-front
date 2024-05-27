@@ -25,17 +25,17 @@ export default function Intro() {
           damping: 100,
           duration: 0.51,
         }}
-        className="absolute top-16 z-50 h-full w-full  object-none"
+        className="absolute top-16 z-20 h-full w-full  object-none"
       >
         <Image
           src={Front}
-          className="absolute bottom-0  z-50 h-full w-full object-none"
+          className="absolute bottom-0  z-20 h-full w-full object-none"
           alt="Front"
           width={2000}
           height={1000}
         />
       </motion.div>
-      <motion.div style={{ y }} className="relative h-full">
+      <motion.div style={{ y }} className="relative z-0 h-full">
         <Image
           src={Background}
           fill
