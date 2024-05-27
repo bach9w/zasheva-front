@@ -21,14 +21,14 @@ export default function Section() {
       <div className="relative z-10 flex h-full w-full flex-col justify-between p-20 text-white">
         <Button
           borderRadius="1.75rem"
-          className=" border-sky-800 bg-slate-600 bg-opacity-20  text-white"
+          className=" border-sky-800 bg-slate-600 bg-opacity-20 text-[12px] text-white md:text-xl"
         >
           Уюта и спокойствието имат нужда от внимание, дори в свят на прекалено
           много прибързаност.
         </Button>
         <Button
           borderRadius="1.75rem"
-          className=" border-sky-800 bg-slate-600 bg-opacity-20  text-white"
+          className="  border-sky-800 bg-slate-600 bg-opacity-20  text-white"
         >
           ZASHEVA KASHTA
         </Button>
