@@ -1,8 +1,9 @@
 import React from "react";
 import Image from "next/image";
-import { ArrowBigDown } from "lucide-react";
+import { ArrowBigDown, ScrollIcon } from "lucide-react";
 import Logo from "../../public/bansko.png";
 import { FlipWords } from "../ui/flip-words";
+import { TiArrowDown } from "react-icons/ti";
 
 export default function Description() {
   const words = ["зимна", "лятна"];
@@ -15,13 +16,12 @@ export default function Description() {
           почивка в Банско
         </div>
       </div>
-      <ArrowBigDown
-        className="relative top-[200px]  animate-bounce "
-        color="gray"
+      <TiArrowDown
+        className="relative top-[200px] z-50 animate-bounce rounded-full bg-orange-400  bg-opacity-10 "
+        color="white"
         size={100}
       />
       <div className="relative top-[100px] flex w-full items-center justify-between p-6 uppercase">
-        <Image src={Logo} alt="Bansko Logo" width={60} height={100} />
         Град Банско
       </div>
     </div>

@@ -12,7 +12,7 @@ export default function Intro() {
     offset: ["start start", "end start"],
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], ["0vh", "200vh"]);
+  const y = useTransform(scrollYProgress, [0, 1], ["0vh", "100vh"]);
 
   return (
     <div className="h-screen overflow-hidden">
@@ -25,13 +25,13 @@ export default function Intro() {
           damping: 100,
           duration: 0.51,
         }}
-        className="absolute top-16 z-20 h-full w-full  object-none"
+        className="absolute top-[80px] z-20 h-full w-full object-none  sm:top-0"
       >
         <Image
           src={Front}
-          className="absolute bottom-0  z-20 h-full w-full object-none"
+          className="absolute bottom-0 z-20 h-full w-full "
           alt="Front"
-          width={2000}
+          width={1000}
           height={1000}
         />
       </motion.div>

@@ -4,6 +4,7 @@ import Center from "../../public/images/hero.png";
 import { useScroll, useTransform, motion } from "framer-motion";
 import { useRef } from "react";
 import { Button } from "../ui/moving-border";
+import { TiArrowDown } from "react-icons/ti";
 
 export default function Section() {
   const container = useRef(null);
@@ -19,7 +20,7 @@ export default function Section() {
       className="relative flex h-screen items-center justify-center overflow-hidden"
       style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
     >
-      <div className="relative z-10 flex h-full w-full flex-col justify-between p-20 text-white">
+      <div className="relative z-10 flex  h-full w-full flex-col items-center  justify-between p-20 text-white">
         <Button
           borderRadius="1.75rem"
           className=" border-sky-800 bg-slate-600 bg-opacity-20 text-[12px] text-white md:text-xl"
@@ -27,7 +28,7 @@ export default function Section() {
           Уюта и спокойствието имат нужда от внимание, дори в свят на прекалено
           много прибързаност.
         </Button>
-
+        <TiArrowDown className="animate-bounce" size={250} />
         <Button
           borderRadius="1.75rem"
           className="  border-sky-800 bg-slate-600 bg-opacity-20  text-white"
