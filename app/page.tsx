@@ -4,7 +4,7 @@ import styles from "./styles/section1.module.scss";
 
 import HeroSection from "@/components/hero-section";
 import Images from "@/components/Image";
-import Rooms from "@/components/rooms_reservation/rooms";
+
 import ParalaxHero from "@/components/Paralax-background/paralax";
 
 const Page = () => {
