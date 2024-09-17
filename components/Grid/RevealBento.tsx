@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Check } from "lucide-react";
 import Front from "@/public/zasheva-front.png";
 import { isSameDay, set } from "date-fns";
 import { DateRange, DayMouseEventHandler, DayPicker } from "react-day-picker";
@@ -33,8 +34,37 @@ import {
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { z } from "zod";
+import { any, z } from "zod";
 import { Input } from "../ui/input";
+import { SubmitButton } from "./submit-button";
+import { features } from "process";
+
+const rooms = [
+  {
+    name: "Единично",
+    price: "30 лв",
+    interval: 1,
+    features: ["Легло", "Телевизор"],
+    priceId: 0,
+    capacity: 1,
+  },
+  {
+    name: "Двойна",
+    price: "50 лв",
+    interval: 1,
+    features: ["Легло", "Телевизор"],
+    priceId: 1,
+    capacity: 2,
+  },
+  {
+    name: "Студио",
+    price: "60 лв",
+    interval: 1,
+    features: ["Легло", "Телевизор"],
+    priceId: 1,
+    capacity: 3,
+  },
+];
 
 export const RevealBento = () => {
   return (
@@ -51,12 +81,72 @@ export const RevealBento = () => {
         <HeaderBlock />
         <SocialsBlock />
         <AboutBlock />
-        <LocationBlock />
+
         <EmailListBlock />
       </motion.div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 ">
+        {rooms.map((room) => (
+          <div key={room.priceId}>
+            <PricingCard
+              name={room.name}
+              price={room.price}
+              interval={room.interval}
+              priceId={room.priceId}
+              features={room.features}
+              capacity={room.capacity}
+            />
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
+
+function PricingCard({
+  name,
+  price,
+  interval,
+
+  features,
+  priceId,
+  capacity,
+}: {
+  name: any;
+  price: any;
+  interval: any;
+  trialDays: number;
+  features: string[];
+  priceId?: any;
+  capacity?: number;
+}) {
+  return (
+    <Block>
+      <div className="pt-6">
+        <h2 className="mb-2 text-2xl font-medium text-gray-900">{name}</h2>
+
+        <p className="mb-6 text-4xl font-medium text-gray-900">
+          {price}
+          <span className=" text-xl font-normal text-gray-600">на вечер</span>
+        </p>
+        <span>капацитет - {capacity} </span>
+        <ul className="mb-8 space-y-4">
+          {features.map((feature, index) => (
+            <li key={index} className="flex items-start">
+              <Check className="mr-2 mt-0.5 h-5 w-5 flex-shrink-0 text-orange-500" />
+              <span className="text-gray-700">{feature}</span>
+            </li>
+          ))}
+        </ul>
+
+        <form>
+          <input type="hidden" name="priceId" value={priceId} />
+
+          <SubmitButton />
+        </form>
+      </div>
+    </Block>
+  );
+}
 
 type BlockProps = {
   className?: string;
@@ -305,7 +395,7 @@ const EmailListBlock = () => {
     console.log(data);
   }
   return (
-    <Block className="col-span-12 md:col-span-9">
+    <Block className="col-span-12 md:col-span-12">
       <Badge className="mb-5 h-[20px] w-[200px] bg-red-800">Резервация</Badge>
 
       <Form {...form}>

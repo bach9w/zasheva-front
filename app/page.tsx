@@ -10,8 +10,6 @@ import ParalaxHero from "@/components/Paralax-background/paralax";
 const Page = () => {
   return (
     <>
-      <ParalaxHero />
-
       <Images />
       <section id="main" className={styles.main}>
         <div id="box" className={styles.box}>
