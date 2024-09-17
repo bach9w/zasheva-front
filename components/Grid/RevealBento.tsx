@@ -114,7 +114,7 @@ function PricingCard({
   name: any;
   price: any;
   interval: any;
-  trialDays: number;
+
   features: string[];
   priceId?: any;
   capacity?: number;
